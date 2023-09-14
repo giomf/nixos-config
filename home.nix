@@ -50,6 +50,11 @@
 			# cat = bat
 			"cat" = "bat";
 		};
+		bashrcExtra = ''
+			function cd() {
+				builtin cd $@ && eza -l --no-time
+			}
+		'';
 	};
 
 	programs.vscode = {
