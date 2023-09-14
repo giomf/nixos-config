@@ -26,6 +26,10 @@
 	environment.systemPackages = with pkgs; [
 	];
 
+
+	# Needed for backlight controll as non root
+	programs.light.enable = true;
+
 	# Security
 	security.polkit.enable = true;
 	security.sudo.wheelNeedsPassword = false;
@@ -54,13 +58,12 @@
 
 	# User
 	users.users.giom = {
-		initialPassword = "afsd";
 		isNormalUser = true;
 		extraGroups = [
-		"wheel"
-		"video"
-		"audio"
-		"networkmanager"
+			"wheel"
+			"video"
+			"audio"
+			"networkmanager"
 		];
 		openssh.authorizedKeys.keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIPI4hVcnH2C5Rq0Pkgv+rw2h1dAm2QQdyboDfW7kUlw giom@glap" ];
 	};
@@ -68,6 +71,8 @@
 	# Networking
 	networking.networkmanager.enable = true;
 
+  	powerManagement.cpuFreqGovernor = "ondemand";
+	# GPU
 	hardware.opengl = {
 		enable = true;
 		driSupport = true;
@@ -76,7 +81,6 @@
 		];
 	};
 
-  # Enable sound.
   # Enable sound.
   	security.rtkit.enable = true;
 	services.pipewire = {
