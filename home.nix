@@ -16,6 +16,7 @@
 		ssh-agents
 		pavucontrol
 		pulseaudio
+		zellij
 
 		# Coding
 		git
@@ -83,12 +84,12 @@
 				{ command = "nextcloud"; }
 			];
 			keybindings = {
-				"${modifier}+Return" = "exec ${terminal}";
-				"${modifier}+Space" = "exec ${menu}";
-				"${modifier}+Shift+Return" = "exec firefox";
-				"${modifier}+f" = "exec ${terminal} -e ranger";
-				"${modifier}+k" = "exec keepassxc";
-				"${modifier}+m" = "exec thunderbird";
+				"${modifier}+Return" = "exec --no-startup-id ${terminal} -e zellij attach -c TERMINAL";
+				"${modifier}+Space" = "exec --no-startup-id ${menu}";
+				"${modifier}+Shift+Return" = "exec --no-startup-id firefox";
+				"${modifier}+f" = "exec --no-startup-id ${terminal} -e ranger";
+				"${modifier}+k" = "exec --no-startup-id keepassxc";
+				"${modifier}+m" = "exec --no-startup-id thunderbird";
 
 				"XF86AudioMute" =  "exec pactl set-sink-mute @DEFAULT_SINK@ toggle";
 				"XF86AudioRaiseVolume" = "exec pactl set-sink-volume @DEFAULT_SINK@ +5%";
