@@ -13,7 +13,6 @@
 		alacritty
 		dmenu
 		ranger
-		ssh-agents
 		pavucontrol
 		pulseaudio
 		zellij
