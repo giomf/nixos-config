@@ -19,7 +19,6 @@
 
 		# Coding
 		git
-		vscode
 		rustup
 
 		# Office
@@ -38,6 +37,21 @@
 
 	# Programs
 	programs.bash.enable = true;
+
+	programs.vscode = {
+		enable = true;
+		enableUpdateCheck = false;
+		extensions = with pkgs.vscode-extensions; [
+			jnoortheen.nix-ide
+			rust-lang.rust-analyzer
+			streetsidesoftware.code-spell-checker
+		];
+		userSettings = {
+			"workbench.colorTheme" = "Visual Studio Dark";
+			"window.zoomLevel" = "2";
+			"editor.minimap.enabled" = "false";
+		};
+	};
 
 	
 	# Services
