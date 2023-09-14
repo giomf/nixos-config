@@ -18,6 +18,7 @@
 		pulseaudio
 		zellij
 		eza
+		bat
 
 		# Coding
 		git
@@ -41,10 +42,13 @@
 	programs.bash = {
 		enable = true;
 		shellAliases = {
+			# ls = eza
 			"ls" = "eza -lbghF";
 			"ll" = "eza -lbghF";
 			"la" = "eza -lbghFa";
 			"lt" = "eza --tree --level=2";
+			# cat = bat
+			"cat" = "bat";
 		};
 	};
 
