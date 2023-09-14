@@ -33,6 +33,7 @@
 		# Social
 		telegram-desktop
 		element-desktop
+		discord
 		spotify
 		nextcloud-client
 	];
@@ -61,7 +62,7 @@
 		];
 		userSettings = {
 			"workbench.colorTheme" = "Visual Studio Dark";
-			"window.zoomLevel" = "2";
+			"window.zoomLevel" = "3";
 			"editor.minimap.enabled" = "false";
 		};
 	};
