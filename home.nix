@@ -17,6 +17,7 @@
 		pavucontrol
 		pulseaudio
 		zellij
+		eza
 
 		# Coding
 		git
@@ -37,7 +38,15 @@
 	];
 
 	# Programs
-	programs.bash.enable = true;
+	programs.bash = {
+		enable = true;
+		shellAliases = {
+			"ls" = "eza -lbghF";
+			"ll" = "eza -lbghF";
+			"la" = "eza -lbghFa";
+			"lt" = "eza --tree --level=2";
+		};
+	};
 
 	programs.vscode = {
 		enable = true;
