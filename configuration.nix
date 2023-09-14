@@ -68,16 +68,26 @@
 		openssh.authorizedKeys.keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIPI4hVcnH2C5Rq0Pkgv+rw2h1dAm2QQdyboDfW7kUlw giom@glap" ];
 	};
 
+	## Enable the X11 windowing system.
+	#services.xserver = {
+	#	enable = true;
+	#	layout = "de";
+	#	videoDrivers = [ "x86video" ];
+	#	displayManager.lightdm.enable = true;
+	#	windowManager.i3.enable = true;
+	#};
+
 	# Networking
 	networking.networkmanager.enable = true;
-
-  	powerManagement.cpuFreqGovernor = "ondemand";
+	
+  	powerManagement.cpuFreqGovernor = "performance";
 	# GPU
 	hardware.opengl = {
 		enable = true;
 		driSupport = true;
 		extraPackages = with pkgs; [
-		intel-compute-runtime
+			intel-compute-runtime
+			intel-media-driver
 		];
 	};
 
