@@ -14,6 +14,8 @@
 		dmenu
 		ranger
 		ssh-agents
+		pavucontrol
+		pulseaudio
 
 		# Coding
 		git
@@ -73,6 +75,10 @@
 				"${modifier}+f" = "exec ${terminal} -e ranger";
 				"${modifier}+k" = "exec keepassxc";
 				"${modifier}+m" = "exec thunderbird";
+
+				"XF86AudioMute" =  "exec pactl set-sink-mute @DEFAULT_SINK@ toggle";
+				"XF86AudioRaiseVolume" =  "exec pactl set-sink-volume @DEFAULT_SINK@ +5%";
+				"XF86AudioLowerVolume" =  "exec pactl set-sink-volume @DEFAULT_SINK@ -5%";
 
 				"${modifier}+Up" = "focus up";
 				"${modifier}+w" = "focus up";
