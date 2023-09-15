@@ -1,20 +1,20 @@
 { config, pkgs, ... }:
 
 {
-	imports =
-		[ # Include the results of the hardware scan.
+	imports = [ # Include the results of the hardware scan.
 		./hardware-configuration.nix
 		./greetd.nix
 		<home-manager/nixos>
-		];
+	];
 
 	system.stateVersion = "23.05";
 	nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+	# Bootloader
 	boot.loader.systemd-boot.enable = true;
 	boot.loader.efi.canTouchEfiVariables = true;
 
 	time.timeZone = "Europe/Berlin";
-
 	console = {
 		keyMap = "de";
 		packages = with pkgs; [ terminus_font ];
@@ -23,9 +23,7 @@
 
 	# Packages
 	nixpkgs.config.allowUnfree = true;
-	environment.systemPackages = with pkgs; [
-	];
-
+	environment.systemPackages = with pkgs; [];
 
 	# Needed for backlight controll as non root
 	programs.light.enable = true;
@@ -55,8 +53,6 @@
 		};
 	};
 
- 
-
 	# User
 	users.users.giom = {
 		isNormalUser = true;
@@ -66,22 +62,15 @@
 			"audio"
 			"networkmanager"
 		];
-		openssh.authorizedKeys.keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIPI4hVcnH2C5Rq0Pkgv+rw2h1dAm2QQdyboDfW7kUlw giom@glap" ];
+		openssh.authorizedKeys.keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIPI4hVcnH2C5Rq0Pkgv+rw2h1dAm2QQdyboDfW7kUlw giom" ];
 	};
-
-	## Enable the X11 windowing system.
-	#services.xserver = {
-	#	enable = true;
-	#	layout = "de";
-	#	videoDrivers = [ "x86video" ];
-	#	displayManager.lightdm.enable = true;
-	#	windowManager.i3.enable = true;
-	#};
 
 	# Networking
 	networking.networkmanager.enable = true;
-	
+
+	# Power management
   	powerManagement.cpuFreqGovernor = "performance";
+
 	# GPU
 	hardware.opengl = {
 		enable = true;

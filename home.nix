@@ -5,7 +5,6 @@
 	home.username = "giom";
 	home.homeDirectory = "/home/giom";
 
-
 	# Packages
 	home.packages = with pkgs; [
 		# Base
@@ -74,7 +73,9 @@
 			"workbench.colorTheme" = "Visual Studio Dark";
 			"window.zoomLevel" = 2;
 			"editor.tabSize" = 4;
-			"editor.minimap.enabled" = "false";
+			"editor.indentSize" = "tabSize";
+			"editor.minimap.enabled" = false;
+			"[nix]"."editor.tabSize" = 4;
 		};
 	};
 
@@ -88,17 +89,15 @@
 		in {
 			enable = true;
 			events = [
-						#{ event = "lock"; command = "${pkgs.swaylock}/bin/swaylock"; }
-						{ event = "before-sleep"; command = "${swaylock_sleep_cmd}"; }
-						{ event = "after-resume"; command = "${pkgs.sway}/bin/swaymsg \"output * toggle\"";}
+				#{ event = "lock"; command = "${pkgs.swaylock}/bin/swaylock"; }
+				{ event = "before-sleep"; command = "${swaylock_sleep_cmd}"; }
+				{ event = "after-resume"; command = "${pkgs.sway}/bin/swaymsg \"output * toggle\"";}
 			];
 			timeouts = [
-						{ timeout = 600; command = "${swaylock_idle_cmd}"; }
-						{ timeout = 1200; command = "${pkgs.sway}/bin/swaymsg \"output * toggle\"";}
-				];
+				{ timeout = 600; command = "${swaylock_idle_cmd}"; }
+				{ timeout = 1200; command = "${pkgs.sway}/bin/swaymsg \"output * toggle\"";}
+			];
 		};
-
-
 
 	# Window manager
 	wayland.windowManager.sway = {
@@ -110,8 +109,8 @@
 			menu = "bemenu-run";
 			defaultWorkspace = "workspace number 1";
 			input = {
-			"*" = {
-				xkb_layout = "de";
+				"*" = {
+					xkb_layout = "de";
 			};
 			};
 				fonts = {
@@ -131,7 +130,7 @@
 				"${modifier}+f" = "exec --no-startup-id ${terminal} -e ranger";
 				"${modifier}+k" = "exec --no-startup-id keepassxc";
 				"${modifier}+m" = "exec --no-startup-id thunderbird";
-				"${modifier}+l" = "exec --no-startup-id swaylock -S --clock --datestr \"%a %d.%m.%Y\" --effect-blur 10x10 --fade-in 3";
+				"${modifier}+l" = "exec --no-startup-id swaylock -S --clock --datestr \"%a %d.%m.%Y\" --effect-blur 10x10 --fade-in 1";
 
 				"XF86AudioMute" =  "exec pactl set-sink-mute @DEFAULT_SINK@ toggle";
 				"XF86AudioRaiseVolume" = "exec pactl set-sink-volume @DEFAULT_SINK@ +5%";
@@ -170,7 +169,6 @@
 
 				"${modifier}+e" = "layout tabbed";
 				"${modifier}+Tab" = "layout toggle tabbed split";
-
 				"${modifier}+q" = "kill";
 
 				"${modifier}+1" = "workspace number 1";
