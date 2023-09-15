@@ -33,6 +33,7 @@
 	# Security
 	security.polkit.enable = true;
 	security.sudo.wheelNeedsPassword = false;
+	security.pam.services.swaylock = {};
 
 	# Services
 	services.openssh.enable = true;

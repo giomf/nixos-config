@@ -11,13 +11,17 @@
 		# Base
 		vim
 		alacritty
-		dmenu
+		bemenu
 		ranger
 		pavucontrol
 		pulseaudio
 		zellij
 		eza
 		bat
+
+		# DE
+		flameshot
+		swaylock-effects
 
 		# Coding
 		git
@@ -37,6 +41,7 @@
 		spotify
 		nextcloud-client
 	];
+
 
 	# Programs
 	programs.bash = {
@@ -67,7 +72,8 @@
 		];
 		userSettings = {
 			"workbench.colorTheme" = "Visual Studio Dark";
-			"window.zoomLevel" = "3";
+			"window.zoomLevel" = 2;
+			"editor.tabSize" = 4;
 			"editor.minimap.enabled" = "false";
 		};
 	};
@@ -75,7 +81,24 @@
 	
 	# Services
 	services.ssh-agent.enable = true;
-  
+	services.swayidle = 
+		let
+			swaylock_sleep_cmd = "swaylock -S --clock --datestr \"%a %d.%m.%Y\" --effect-blur 10x10";
+			swaylock_idle_cmd = "swaylock -S --clock --datestr \"%a %d.%m.%Y\" --effect-blur 10x10 --fade-in 3 --grace 13";
+		in {
+			enable = true;
+			events = [
+						#{ event = "lock"; command = "${pkgs.swaylock}/bin/swaylock"; }
+						{ event = "before-sleep"; command = "${swaylock_sleep_cmd}"; }
+						{ event = "after-resume"; command = "${pkgs.sway}/bin/swaymsg \"output * toggle\"";}
+			];
+			timeouts = [
+						{ timeout = 600; command = "${swaylock_idle_cmd}"; }
+						{ timeout = 1200; command = "${pkgs.sway}/bin/swaymsg \"output * toggle\"";}
+				];
+		};
+
+
 
 	# Window manager
 	wayland.windowManager.sway = {
@@ -84,7 +107,7 @@
 		config = rec {
 			modifier = "Mod4";
 			terminal = "alacritty";
-			menu = "dmenu_run";
+			menu = "bemenu-run";
 			defaultWorkspace = "workspace number 1";
 			input = {
 			"*" = {
@@ -108,6 +131,7 @@
 				"${modifier}+f" = "exec --no-startup-id ${terminal} -e ranger";
 				"${modifier}+k" = "exec --no-startup-id keepassxc";
 				"${modifier}+m" = "exec --no-startup-id thunderbird";
+				"${modifier}+l" = "exec --no-startup-id swaylock -S --clock --datestr \"%a %d.%m.%Y\" --effect-blur 10x10 --fade-in 3";
 
 				"XF86AudioMute" =  "exec pactl set-sink-mute @DEFAULT_SINK@ toggle";
 				"XF86AudioRaiseVolume" = "exec pactl set-sink-volume @DEFAULT_SINK@ +5%";
