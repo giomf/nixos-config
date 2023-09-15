@@ -83,19 +83,19 @@
 	# Services
 	services.ssh-agent.enable = true;
 	services.swayidle = 
-		let
-			swaylock_sleep_cmd = "swaylock -S --clock --datestr \"%a %d.%m.%Y\" --effect-blur 10x10";
-			swaylock_idle_cmd = "swaylock -S --clock --datestr \"%a %d.%m.%Y\" --effect-blur 10x10 --fade-in 3 --grace 13";
+		let	
+			output_on_cmd = "${pkgs.sway}/bin/swaymsg \"output * dpms on\"";
+			output_off_cmd = "${pkgs.sway}/bin/swaymsg \"output * dpms off\"";
+			lock_sleep_cmd = "${pkgs.swaylock-effects}/bin/swaylock -f -S --clock --effect-blur 10x10";
+			lock_idle_cmd = "${pkgs.swaylock-effects}/bin/swaylock -f -S --clock --effect-blur 10x10 --fade-in 3 --grace 10";
 		in {
 			enable = true;
 			events = [
-				#{ event = "lock"; command = "${pkgs.swaylock}/bin/swaylock"; }
-				{ event = "before-sleep"; command = "${swaylock_sleep_cmd}"; }
-				{ event = "after-resume"; command = "${pkgs.sway}/bin/swaymsg \"output * toggle\"";}
+				{ event = "before-sleep"; command = "${lock_sleep_cmd}"; }
 			];
 			timeouts = [
-				{ timeout = 600; command = "${swaylock_idle_cmd}"; }
-				{ timeout = 1200; command = "${pkgs.sway}/bin/swaymsg \"output * toggle\"";}
+				{ timeout = 300; command = "${lock_idle_cmd}"; }
+				{ timeout = 600; command = "${output_off_cmd}"; resumeCommand = "${output_on_cmd}"; }
 			];
 		};
 
@@ -130,7 +130,8 @@
 				"${modifier}+f" = "exec --no-startup-id ${terminal} -e ranger";
 				"${modifier}+k" = "exec --no-startup-id keepassxc";
 				"${modifier}+m" = "exec --no-startup-id thunderbird";
-				"${modifier}+l" = "exec --no-startup-id swaylock -S --clock --datestr \"%a %d.%m.%Y\" --effect-blur 10x10 --fade-in 1";
+				"${modifier}+l" = "exec --no-startup-id flameshot gui";
+				"${modifier}+Escape" = "exec --no-startup-id ${pkgs.swaylock-effects}/bin/swaylock -f -S --clock --effect-blur 10x10 --fade-in 1";
 
 				"XF86AudioMute" =  "exec pactl set-sink-mute @DEFAULT_SINK@ toggle";
 				"XF86AudioRaiseVolume" = "exec pactl set-sink-volume @DEFAULT_SINK@ +5%";

@@ -1,1 +1,1 @@
- sudo cp * /etc/nixos/ && sudo nixos-rebuild switch
+sudo cp * /etc/nixos/ && sudo nixos-rebuild switch
