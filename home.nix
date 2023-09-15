@@ -27,11 +27,10 @@
 		rustup
 
 		# Office
-		firefox-wayland
 		google-chrome
-		thunderbird
 		libreoffice-qt
 		keepassxc
+		thunderbird
 		
 		# Social
 		telegram-desktop
@@ -79,7 +78,22 @@
 		};
 	};
 
-	
+	programs.firefox = {
+		enable = true;
+		package = pkgs.firefox-wayland;
+		profiles = {
+			giom = {
+				id = 0;
+				name = "giom";
+				extensions = with pkgs.nur.repos.rycee.firefox-addons; [
+					ublock-origin
+					darkreader
+					keepassxc-browser
+				];
+			};
+		};
+	};
+
 	# Services
 	services.ssh-agent.enable = true;
 	services.swayidle = 

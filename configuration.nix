@@ -7,6 +7,8 @@
 		<home-manager/nixos>
 	];
 
+	
+
 	system.stateVersion = "23.05";
 	nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
@@ -22,6 +24,11 @@
 	};
 
 	# Packages
+	nixpkgs.config.packageOverrides = pkgs: {
+		nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") {
+		inherit pkgs;
+		};
+  	};
 	nixpkgs.config.allowUnfree = true;
 	environment.systemPackages = with pkgs; [];
 
