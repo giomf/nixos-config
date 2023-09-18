@@ -10,16 +10,17 @@
 		# Base
 		vim
 		alacritty
-		bemenu
 		ranger
 		pavucontrol
 		pulseaudio
 		zellij
 		eza
 		bat
+		flameshot
+		btop
 
 		# DE
-		flameshot
+		bemenu
 		swaylock-effects
 
 		# Coding
@@ -96,6 +97,7 @@
 
 	# Services
 	services.ssh-agent.enable = true;
+
 	services.swayidle = 
 		let	
 			output_on_cmd = "${pkgs.sway}/bin/swaymsg \"output * dpms on\"";
