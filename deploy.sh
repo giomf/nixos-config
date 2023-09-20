@@ -1,1 +1,0 @@
-sudo cp * /etc/nixos/ && sudo nixos-rebuild switch
