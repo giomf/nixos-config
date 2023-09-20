@@ -68,6 +68,7 @@
 			jnoortheen.nix-ide
 			rust-lang.rust-analyzer
 			streetsidesoftware.code-spell-checker
+			arrterian.nix-env-selector
 		];
 		userSettings = {
 			"workbench.colorTheme" = "Visual Studio Dark";
@@ -76,6 +77,7 @@
 			"editor.indentSize" = "tabSize";
 			"editor.minimap.enabled" = false;
 			"[nix]"."editor.tabSize" = 4;
+			"nixEnvSelector.nixFile" = "\${workspaceRoot}/shell.nix";
 		};
 	};
 
