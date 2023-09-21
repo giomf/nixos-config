@@ -156,7 +156,7 @@
 				"XF86AudioRaiseVolume" = "exec pactl set-sink-volume @DEFAULT_SINK@ +5%";
 				"XF86AudioLowerVolume" = "exec pactl set-sink-volume @DEFAULT_SINK@ -5%";
 				"XF86MonBrightnessUp" = "exec light -A 10";
-				"XF86MonBrightnessDown" = "exec light -U 10";
+				"XF86MonBrightnessDown" = "exec LIGHT=$(light) && (( \${LIGHT%.*} > 10 )) && light -U 10";
 
 				"${modifier}+Up" = "focus up";
 				"${modifier}+w" = "focus up";
