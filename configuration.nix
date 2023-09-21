@@ -26,9 +26,10 @@
 		nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") {
 			inherit pkgs;
 		};
-  };
+  	};
 	
 	nixpkgs.config.allowUnfree = true;
+	environment.defaultPackages = with pkgs; [];
 	environment.systemPackages = with pkgs; [];
 
 	# Needed for backlight controll as non root

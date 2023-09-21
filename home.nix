@@ -149,6 +149,7 @@
 				"${modifier}+k" = "exec --no-startup-id keepassxc";
 				"${modifier}+m" = "exec --no-startup-id thunderbird";
 				"${modifier}+l" = "exec --no-startup-id flameshot gui";
+				"${modifier}+t" = "exec --no-startup-id ${terminal} -e btop";
 				"${modifier}+Escape" = "exec --no-startup-id ${pkgs.swaylock-effects}/bin/swaylock -f -S --clock --effect-blur 10x10 --fade-in 1";
 
 				"XF86AudioMute" =  "exec pactl set-sink-mute @DEFAULT_SINK@ toggle";
