@@ -18,6 +18,7 @@
 		bat
 		flameshot
 		btop
+		gammastep
 
 		# DE
 		bemenu
@@ -150,6 +151,7 @@
 				"${modifier}+m" = "exec --no-startup-id thunderbird";
 				"${modifier}+l" = "exec --no-startup-id flameshot gui";
 				"${modifier}+t" = "exec --no-startup-id ${terminal} -e btop";
+				"${modifier}+j" = "exec --no-startup-id bash -c \"if pgrep gammastep; then pkill gammastep; else gammastep -O 4500; fi\"";
 				"${modifier}+Escape" = "exec --no-startup-id ${pkgs.swaylock-effects}/bin/swaylock -f -S --clock --effect-blur 10x10 --fade-in 1";
 
 				"XF86AudioMute" =  "exec pactl set-sink-mute @DEFAULT_SINK@ toggle";
