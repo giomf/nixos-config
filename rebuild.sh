@@ -12,7 +12,7 @@ elif [[ "$1" == "switch" ]]; then
     sudo cp *.nix /etc/nixos/ && sudo nixos-rebuild switch
 elif [[ "$1" == "boot" ]]; then
     sudo cp *.nix /etc/nixos/ && sudo nixos-rebuild boot
-else 
+else
     echo "ERROR: Command $1 not found. Aborting!"
     echo "Use help"
     exit 1

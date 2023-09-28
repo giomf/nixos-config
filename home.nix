@@ -18,10 +18,11 @@
 		bat
 		flameshot
 		btop
-		gammastep
+		unzip
 
 		# DE
 		bemenu
+		gammastep
 		swaylock-effects
 
 		# Coding
@@ -70,6 +71,8 @@
 			rust-lang.rust-analyzer
 			streetsidesoftware.code-spell-checker
 			arrterian.nix-env-selector
+			mads-hartmann.bash-ide-vscode
+			foxundermoon.shell-format
 		];
 		userSettings = {
 			"workbench.colorTheme" = "Visual Studio Dark";
