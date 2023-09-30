@@ -34,6 +34,7 @@
 
 	# Needed for backlight controll as non root
 	programs.light.enable = true;
+	programs.fish.enable = true;
 
 	# Security
 	security.polkit.enable = true;
@@ -63,6 +64,7 @@
 	# User
 	users.users.giom = {
 		isNormalUser = true;
+		shell = pkgs.fish;
 		extraGroups = [
 			"wheel"
 			"video"
