@@ -8,7 +8,6 @@
 	# Packages
 	home.packages = with pkgs; [
 		# Base
-		vim
 		alacritty
 		ranger
 		pavucontrol
@@ -88,6 +87,11 @@
 			fish_right_prompt = "date '+%H:%M:%S'";
 			fish_prompt = "printf '[%s@%s%s%s]%s %s%s%s\n> ' $USER (set_color red) (prompt_hostname) (set_color normal) (fish_git_prompt) (set_color green) (prompt_pwd) (set_color normal)";
 		};
+	};
+
+	programs.vim = {
+		enable = true;
+		defaultEditor = true;
 	};
 
 	programs.vscode = {
