@@ -47,7 +47,6 @@
 	programs.fish = {
 		enable = true;
 		shellInit = "
-			set -e fish_greeting
 			set -g __fish_git_prompt_show_informative_status true
 			set -g __fish_git_prompt_showstashstate true
 			set -g __fish_git_prompt_showupstream informative
@@ -84,6 +83,7 @@
 		functions = {
 			cd = "builtin cd $argv && eza -l --no-time";
 			#fish_git_prompt = "[]";
+			fish_greeting = "";
 			fish_right_prompt = "date '+%H:%M:%S'";
 			fish_prompt = "printf '[%s@%s%s%s]%s %s%s%s\n> ' $USER (set_color red) (prompt_hostname) (set_color normal) (fish_git_prompt) (set_color green) (prompt_pwd) (set_color normal)";
 		};
@@ -135,7 +135,6 @@
 
 	# Services
 	services.ssh-agent.enable = true;
-
 	services.swayidle = 
 		let	
 			output_on_cmd = "${pkgs.sway}/bin/swaymsg \"output * dpms on\"";
@@ -165,7 +164,7 @@
 			input = {
 				"*" = {
 					xkb_layout = "de";
-			};
+				};
 			};
 				fonts = {
 				names = [ "DejaVu Sans Mono" ];
