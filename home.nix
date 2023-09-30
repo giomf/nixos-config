@@ -135,6 +135,14 @@
 
 	# Services
 	services.ssh-agent.enable = true;
+
+	## Notification daemon
+	services.mako = {
+		enable = true;
+		defaultTimeout = 7500;
+		maxVisible = 3;
+	};
+
 	services.swayidle = 
 		let	
 			output_on_cmd = "${pkgs.sway}/bin/swaymsg \"output * dpms on\"";
