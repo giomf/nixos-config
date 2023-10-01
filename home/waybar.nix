@@ -51,10 +51,10 @@
 
 				"network" = {
 					format-ethernet = "󰈀";
-					tooltip-format-ethernet = "󰈀\n󰩟 {ipaddr}\n󰕒 {bandwidthUpBytes}\n󰇚 {bandwidthUpBytes}";
+					tooltip-format-ethernet = "󰈀\n󰩟 {ipaddr}\n󰕒 {bandwidthUpBytes}\n󰇚 {bandwidthDownBytes}";
 
 					format-wifi = "{icon} {signalStrength}%";
-					tooltip-format-wifi = "{icon} {essid} ({signalStrength}%)\n󰩟 {ipaddr}\n󰕒 {bandwidthUpBytes}\n󰇚 {bandwidthUpBytes}";
+					tooltip-format-wifi = "{icon} {essid} ({signalStrength}%)\n󰩟 {ipaddr}\n󰕒 {bandwidthUpBytes}\n󰇚 {bandwidthDownBytes}";
 					format-icons = ["󰤯" "󰤟" "󰤢" "󰤥" "󰤨"];
 				};
 			};
