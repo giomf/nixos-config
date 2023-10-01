@@ -47,10 +47,12 @@
 	
 	fonts = {
 		packages = with pkgs; [
+			font-awesome
 			dejavu_fonts
 			source-code-pro
 			source-sans-pro
 			source-serif-pro
+			(nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
 		];
 		fontconfig = {
 			defaultFonts = {
