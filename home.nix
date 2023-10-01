@@ -127,7 +127,7 @@
 				height = 30;
 				modules-left = [ "sway/workspaces" ];
 				modules-center = [ "tray" ];
-				modules-right = [ "network" "bluetooth" "backlight" "pulseaudio" "temperature" "battery" "clock" ];
+				modules-right = [ "network" "backlight" "pulseaudio" "temperature" "battery" "clock" ];
 
 				"tray" = {
 					spacing = 3;
@@ -202,7 +202,7 @@
 				border-bottom: 3px solid white;
 			}
 
-			#clock, #battery, #pulseaudio, #backlight, #temperature {
+			#clock, #battery, #pulseaudio, #backlight, #temperature, #network {
 				padding: 0 10px;
 			}
 
@@ -231,7 +231,7 @@
 	# Services
 	services.ssh-agent.enable = true;
 	services.blueman-applet.enable = true;
-	
+
 	## Notification daemon
 	services.mako = {
 		enable = true;
