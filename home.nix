@@ -82,7 +82,6 @@
 		};
 		functions = {
 			cd = "builtin cd $argv && eza -l --no-time";
-			#fish_git_prompt = "[]";
 			fish_greeting = "";
 			fish_right_prompt = "date '+%H:%M:%S'";
 			fish_prompt = "printf '[%s@%s%s%s]%s %s%s%s\n> ' $USER (set_color red) (prompt_hostname) (set_color normal) (fish_git_prompt) (set_color green) (prompt_pwd) (set_color normal)";

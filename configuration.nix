@@ -4,7 +4,6 @@
 	imports = [ # Include the results of the hardware scan.
 		./hardware-configuration.nix
 		./greetd.nix
-		<home-manager/nixos>
 	];
 
 	system.stateVersion = "23.05";
@@ -20,13 +19,6 @@
 		packages = with pkgs; [ terminus_font ];
 		font = "ter-u28n";
 	};
-
-	# Packages
-	nixpkgs.config.packageOverrides = pkgs: {
-		nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") {
-			inherit pkgs;
-		};
-  	};
 	
 	nixpkgs.config.allowUnfree = true;
 	environment.defaultPackages = with pkgs; [];
@@ -106,9 +98,5 @@
 		# If you want to use JACK applications, uncomment this
 		#jack.enable = true;
 	};
-
-	# Home-manager
-	home-manager.useGlobalPkgs = true;
-	home-manager.users.giom = import ./home.nix;
 }
 
