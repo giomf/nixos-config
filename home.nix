@@ -230,7 +230,8 @@
 
 	# Services
 	services.ssh-agent.enable = true;
-
+	services.blueman-applet.enable = true;
+	
 	## Notification daemon
 	services.mako = {
 		enable = true;

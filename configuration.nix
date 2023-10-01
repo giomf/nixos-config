@@ -44,6 +44,7 @@
 	# Services
 	services.openssh.enable = true;
 	services.openssh.settings.PermitRootLogin = "yes";
+	services.blueman.enable = true;
 	
 	fonts = {
 		packages = with pkgs; [
@@ -82,14 +83,17 @@
 	# Power management
   	powerManagement.cpuFreqGovernor = "performance";
 
-	# GPU
-	hardware.opengl = {
-		enable = true;
-		driSupport = true;
-		extraPackages = with pkgs; [
-			intel-compute-runtime
-			intel-media-driver
-		];
+	# Hardware
+	hardware = {
+		bluetooth.enable = true;
+		opengl = {
+			enable = true;
+			driSupport = true;
+			extraPackages = with pkgs; [
+				intel-compute-runtime
+				intel-media-driver
+			];
+		};
 	};
 
   # Enable sound.
