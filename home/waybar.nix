@@ -70,24 +70,28 @@
 
 			window#waybar {
 				background: rgba(43, 48, 59, 0.5);
-				border-bottom: 3px solid rgba(100, 114, 125, 0.5);
+				/* border-bottom: 3px solid rgba(100, 114, 125, 0.5); */
 				color: white;
 			}
 
 			#workspaces button {
-				padding: 0 5px;
-				background: transparent;
+				margin: 3px 0;
 				color: white;
-				border-bottom: 3px solid transparent;
+				background: transparent;
 			}
 
 			#workspaces button.focused {
-				background: #64727D;
-				border-bottom: 3px solid white;
+				margin: 3px 0;
+				border-radius: 5;
+				background: rgba(100, 114, 125, 0.5);
 			}
 
 			#clock, #battery, #pulseaudio, #backlight, #temperature, #network {
 				padding: 0 10px;
+				margin: 3px;
+				background: rgba(100, 114, 125, 0.5);
+				border-radius: 5;
+
 			}
 
 			#temperature.critical {
