@@ -96,7 +96,7 @@
 					{
 						home-manager.useGlobalPkgs = true;
 						home-manager.useUserPackages = true;
-						home-manager.users.giom = import ./home.nix;
+						home-manager.users.giom = import ./home;
 						nixpkgs.overlays = [
 							nur.overlay
 						];

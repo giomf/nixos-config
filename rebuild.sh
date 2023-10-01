@@ -9,9 +9,9 @@ if [[ -z "$1" || "$1" == "help" ]]; then
     echo -e "\tboot"
 
 elif [[ "$1" == "switch" ]]; then
-    sudo cp *.nix /etc/nixos/ && sudo nixos-rebuild switch
+    sudo cp -r  *.nix home/ /etc/nixos/ && sudo nixos-rebuild switch
 elif [[ "$1" == "boot" ]]; then
-    sudo cp *.nix /etc/nixos/ && sudo nixos-rebuild boot
+    sudo cp *.nix home/ /etc/nixos/ && sudo nixos-rebuild boot
 else
     echo "ERROR: Command $1 not found. Aborting!"
     echo "Use help"
