@@ -95,6 +95,7 @@
 			}
 
 			decoration {
+				drop_shadow = false
 				blur {
 					enabled = false
 				}
