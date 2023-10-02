@@ -69,7 +69,7 @@
 			}
 
 			window#waybar {
-				background: rgba(43, 48, 59, 0.5);
+				background: rgba(43, 48, 59, 1);
 				/* border-bottom: 3px solid rgba(100, 114, 125, 0.5); */
 				color: white;
 			}
