@@ -1,7 +1,17 @@
 { config, pkgs, ... }:
 
-{
-   programs.waybar = {
+{  
+	programs.waybar = 
+	let
+		colors = import ./colors.nix;
+		bar_base = colors.grey_dark;
+    	bar_items = colors.grey_light;
+    	text = colors.white;
+    	focus = colors.blue;
+    	warning = colors.orange;
+    	critical = colors.red;
+	in
+	{
 		enable = true;
 		systemd.enable = true;
 		settings = {
@@ -77,11 +87,11 @@
 				font-family: Roboto, Helvetica, Arial, sans-serif;
 				font-size: 13px;
 				min-height: 0;
-				color: #d8dee9;
+				color: #${text};
 			}
 
 			window#waybar {
-				background: #2e3440;
+				background: #${bar_base};
 			}
 
 			#workspaces button {
@@ -91,37 +101,37 @@
 			#workspaces button.active {
 				margin: 3px 0;
 				border-radius: 5;
-				background: #5e81ac;
+				background: #${focus};
 			}
 
 			#clock, #battery, #pulseaudio, #backlight, #temperature, #network {
 				padding: 0 10px;
 				margin: 3px;
-				background: #4c566a;
+				background: #${bar_items};
 				border-radius: 5;
 			}
 
 			#custom-power {
-				background: #bf616a;
+				background: #${critical};
 				padding: 0 10px;
 				margin: 3px;
 				border-radius: 5;
 			}
 
 			#battery.warning {
-				background: #d08770;
+				background: #${warning};
 			}
 
 			#battery.critical {
-				background: #bf616a;
+				background: #${critical};
 			}
 
 			#temperature.critical {
-				background: #bf616a;
+				background: #${critical};
 			}
 
 			#pulseaudio.muted {
-				background: #bf616a;
+				background: #${critical};
 			}
 		'';
 	};

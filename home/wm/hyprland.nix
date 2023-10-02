@@ -7,8 +7,13 @@
 		swaylock-effects
 	];
 
-  	wayland.windowManager.hyprland = {		
-		enable = true;#5e81ac
+  	wayland.windowManager.hyprland = 
+	let
+		colors = import ./colors.nix;
+    	focus = colors.blue;
+	in
+	{		
+		enable = true;
 		extraConfig = ''
 			$mod = SUPER
 			$term = alacritty
@@ -78,7 +83,7 @@
 				border_size = 2
 				gaps_out = 5
 				gaps_in = 5
-				col.active_border = rgb(5e81ac)
+				col.active_border = rgb(${focus})
 			}
 
 			input {

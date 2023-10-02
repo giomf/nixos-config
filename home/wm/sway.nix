@@ -100,7 +100,7 @@
 	};
 
 	services.swayidle = 
-		let	
+		let
 			output_on_cmd = "${pkgs.sway}/bin/swaymsg \"output * dpms on\"";
 			output_off_cmd = "${pkgs.sway}/bin/swaymsg \"output * dpms off\"";
 			lock_sleep_cmd = "${pkgs.swaylock-effects}/bin/swaylock -f -S --clock --effect-blur 10x10";
