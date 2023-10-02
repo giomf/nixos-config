@@ -6,12 +6,12 @@ if [[ -z "$1" || "$1" == "help" ]]; then
     echo -e "Usage: ${script_name} <command>\n"
     echo "Commands:"
     echo -e "\tswitch"
-    echo -e "\tboot"
+    echo -e "\ttest"
 
 elif [[ "$1" == "switch" ]]; then
     sudo nixos-rebuild switch --flake .
-elif [[ "$1" == "boot" ]]; then
-    sudo nixos-rebuild boot --flake .
+elif [[ "$1" == "test" ]]; then
+    sudo nixos-rebuild test --flake .
 else
     echo "ERROR: Command $1 not found. Aborting!"
     echo "Use help"
