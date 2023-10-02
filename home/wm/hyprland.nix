@@ -8,7 +8,7 @@
 	];
 
   	wayland.windowManager.hyprland = {		
-		enable = true;
+		enable = true;#5e81ac
 		extraConfig = ''
 			$mod = SUPER
 			$term = alacritty
@@ -16,7 +16,7 @@
 
 			exec-once = light -N 10
 
-			bind = $mod, return, exec, $term
+			bind = $mod, return, exec, $term -e zellij attach -c TERMINAL
 			bind = $mod, space, exec, $menu
 			bind = $mod SHIFT, return, exec, firefox
 			bind = $mod, F, exec, $term -e ranger
@@ -75,8 +75,10 @@
 			##########################################################################
 
 			general {
+				border_size = 2
 				gaps_out = 5
 				gaps_in = 5
+				col.active_border = rgb(5e81ac)
 			}
 
 			input {
