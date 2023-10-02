@@ -89,6 +89,17 @@
 			misc {
 				disable_hyprland_logo = true
 			}
+
+			debug {
+    			overlay = false
+			}
+
+			decoration {
+				blur {
+					enabled = false
+				}
+			}
+
 			monitor=,highres,auto,1
 		'';
 	};
