@@ -14,6 +14,7 @@
 				modules-right = [ "network" "backlight" "pulseaudio" "temperature" "battery" "clock" ];
 
 				"tray" = {
+					icon-size = 20;
 					spacing = 3;
 				};
 
