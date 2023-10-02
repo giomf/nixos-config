@@ -2,12 +2,8 @@
 
 {
     imports = [
-        ./common.nix
-        ./sway.nix
         ./fish.nix
-        ./vscode.nix
-        ./browsers.nix
-        ./waybar.nix
+        ./wm
     ];
 
     # Home Manager needs a bit of information about you and the
@@ -29,4 +25,29 @@
 
     # Let Home Manager install and manage itself.
     programs.home-manager.enable = true;
+
+	# Packages
+	home.packages = with pkgs; [
+		# Base
+		ranger
+		zellij
+		eza
+		bat
+		flameshot
+		btop
+		unzip
+
+		# Coding
+		git
+		rustup
+	];
+
+	# Programs
+	programs.vim = {
+		enable = true;
+		defaultEditor = true;
+	};
+
+	# Services
+	services.ssh-agent.enable = true;
 }

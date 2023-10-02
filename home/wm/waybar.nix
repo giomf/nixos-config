@@ -9,7 +9,7 @@
 				layer = "top";
 				position = "bottom";
 				height = 30;
-				modules-left = [ "sway/workspaces" ];
+				modules-left = [ "hyprland/workspaces" ];
 				modules-center = [ "tray" ];
 				modules-right = [ "network" "backlight" "pulseaudio" "temperature" "battery" "clock" ];
 
@@ -18,8 +18,7 @@
 					spacing = 3;
 				};
 
-				"sway/workspaces" = {
-					disable-scroll = true;
+				"hyprland/workspaces" = {
 					all-outputs = true;
 				};
 
@@ -81,7 +80,7 @@
 				background: transparent;
 			}
 
-			#workspaces button.focused {
+			#workspaces button.active {
 				margin: 3px 0;
 				border-radius: 5;
 				background: rgba(100, 114, 125, 0.5);
