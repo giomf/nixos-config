@@ -52,7 +52,7 @@
 			bind = $mod SHIFT, S, movewindow, d
 
 			bind = $mod, Q, killactive,
-			bind = $mod, Tab, fullscreen, 1
+			bind = $mod, E, fullscreen, 1
 
 			# workspaces
 			# binds mod + [shift +] {1..10} to [move to] ws {1..10}
