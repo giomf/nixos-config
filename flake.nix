@@ -87,11 +87,8 @@
 				#
 				# specialArgs = {...}  # pass custom arguments into all sub module.
 				modules = [
-					# Import the configuration.nix here, so that the
-					# old configuration file can still take effect.
-					# Note: configuration.nix itself is also a Nix Module,
-					./configuration.nix
-
+					./nixos
+				
 					home-manager.nixosModules.home-manager
 					{
 						home-manager.useGlobalPkgs = true;
@@ -100,7 +97,6 @@
 						nixpkgs.overlays = [
 							nur.overlay
 						];
-						# Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
 					}
 				];
 			};
