@@ -11,11 +11,17 @@
 				height = 30;
 				modules-left = [ "hyprland/workspaces" ];
 				modules-center = [ "tray" ];
-				modules-right = [ "network" "backlight" "pulseaudio" "temperature" "battery" "clock" ];
+				modules-right = [ "network" "backlight" "pulseaudio" "temperature" "battery" "custom/power" "clock" ];
 
 				"tray" = {
 					icon-size = 20;
 					spacing = 3;
+				};
+
+				"custom/power" = {
+					format = "󰐥";
+					on-click = "systemctl poweroff";
+					on-click-right = "systemctl reboot";
 				};
 
 				"hyprland/workspaces" = {
@@ -86,7 +92,7 @@
 				background: rgba(100, 114, 125, 0.5);
 			}
 
-			#clock, #battery, #pulseaudio, #backlight, #temperature, #network {
+			#clock, #battery, #pulseaudio, #backlight, #temperature, #network, #custom-power {
 				padding: 0 10px;
 				margin: 3px;
 				background: rgba(100, 114, 125, 0.5);
