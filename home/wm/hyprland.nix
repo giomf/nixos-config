@@ -14,6 +14,8 @@
 			$term = alacritty
 			$menu = bemenu-run
 
+			exec-once = light -N 10
+
 			bind = $mod, return, exec, $term
 			bind = $mod, space, exec, $menu
 			bind = $mod SHIFT, return, exec, firefox
@@ -28,7 +30,7 @@
 			binde = , XF86AudioRaiseVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ +5%
 			binde = , XF86AudioLowerVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ -5%
 			binde = , XF86MonBrightnessUp, exec, light -A 10
-			binde = , XF86MonBrightnessUp, exec, light -U 10
+			binde = , XF86MonBrightnessDown, exec, light -U 10
 
 
 			# move focus
