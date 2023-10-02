@@ -103,6 +103,7 @@
 			lock_idle_cmd = "${pkgs.swaylock-effects}/bin/swaylock -f -S --clock --effect-blur 10x10 --fade-in 3 --grace 10";
 		in {
 			enable = true;
+			systemdTarget = "hyprland-session.target";
 			events = [
 				{ event = "before-sleep"; command = "${lock_sleep_cmd}"; }
 			];
