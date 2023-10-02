@@ -6,6 +6,7 @@
 		colors = import ./colors.nix;
 		bar_base = colors.grey_dark;
     	bar_items = colors.grey_light;
+		power_button = colors.red;
     	text = colors.white;
     	focus = colors.blue;
     	warning = colors.orange;
@@ -104,7 +105,7 @@
 				background: #${focus};
 			}
 
-			#clock, #battery, #pulseaudio, #backlight, #temperature, #network {
+			#clock, #battery, #pulseaudio, #backlight, #temperature, #network, #custom-power {
 				padding: 0 10px;
 				margin: 3px;
 				background: #${bar_items};
@@ -112,10 +113,7 @@
 			}
 
 			#custom-power {
-				background: #${critical};
-				padding: 0 10px;
-				margin: 3px;
-				border-radius: 5;
+				background: #${power_button};
 			}
 
 			#battery.warning {
