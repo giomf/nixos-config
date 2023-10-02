@@ -26,11 +26,11 @@
     # Let Home Manager install and manage itself.
     programs.home-manager.enable = true;
 
+
 	# Packages
 	home.packages = with pkgs; [
 		# Base
 		ranger
-		zellij
 		eza
 		bat
 		flameshot
@@ -43,6 +43,11 @@
 	];
 
 	# Programs
+    programs.zellij = {
+        enable = true;
+        enableFishIntegration = true;
+    };
+
 	programs.vim = {
 		enable = true;
 		defaultEditor = true;
