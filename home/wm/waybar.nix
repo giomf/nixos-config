@@ -6,9 +6,10 @@
 		colors = import ./colors.nix;
 		bar_base = colors.grey_dark;
     	bar_items = colors.grey_light;
+		bar_highlights = colors.blue;
 		power_button = colors.red;
     	text = colors.white;
-    	focus = colors.blue;
+    	focus = colors.purple;
     	warning = colors.orange;
     	critical = colors.red;
 	in
@@ -112,8 +113,8 @@
 				border-radius: 5;
 			}
 
-			#custom-power {
-				background: #${power_button};
+			#custom-power, #clock {
+				background: #${bar_highlights};
 			}
 
 			#battery.warning {

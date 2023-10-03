@@ -10,7 +10,7 @@
   	wayland.windowManager.hyprland = 
 	let
 		colors = import ./colors.nix;
-    	focus = colors.blue;
+    	focus = colors.purple;
 	in
 	{		
 		enable = true;
@@ -118,6 +118,7 @@
 		let	
 			output_on_cmd = "${pkgs.hyprland}/bin/hyprctl dispatch dpms on";
 			output_off_cmd = "${pkgs.hyprland}/bin/hyprctl dispatch dpms off";
+			suspend_cmd = "${pkgs.systemd}/bin/systemctl suspend";
 			lock_sleep_cmd = "${pkgs.swaylock-effects}/bin/swaylock -f -S --clock --effect-blur 10x10";
 			lock_idle_cmd = "${pkgs.swaylock-effects}/bin/swaylock -f -S --clock --effect-blur 10x10 --fade-in 3 --grace 10";
 		in {
@@ -129,6 +130,7 @@
 			timeouts = [
 				{ timeout = 300; command = "${lock_idle_cmd}"; }
 				{ timeout = 600; command = "${output_off_cmd}"; resumeCommand = "${output_on_cmd}"; }
+				{ timeout = 900; command = "${suspend_cmd}"; }
 			];
 		};
 }

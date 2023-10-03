@@ -5,4 +5,6 @@
     red = "bf616a";
     orange = "d08770";
     blue = "5e81ac"; 
+    purple = "b48ead";
+    green = "a3be8c";
 }
