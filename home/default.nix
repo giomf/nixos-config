@@ -36,17 +36,12 @@
 		flameshot
 		btop
 		unzip
+        zellij
 
 		# Coding
 		git
 		rustup
 	];
-
-	# Programs
-    programs.zellij = {
-        enable = true;
-        enableFishIntegration = true;
-    };
 
 	programs.vim = {
 		enable = true;
