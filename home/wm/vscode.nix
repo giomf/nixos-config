@@ -12,6 +12,7 @@
 			arrterian.nix-env-selector
 			mads-hartmann.bash-ide-vscode
 			foxundermoon.shell-format
+			mhutchie.git-graph
 		];
 		userSettings = {
 			"workbench.colorTheme" = "Visual Studio Dark";
