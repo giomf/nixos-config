@@ -28,7 +28,7 @@
 	# Needed for backlight controll as non root
 	programs.light.enable = true;
 	programs.fish.enable = true;
-
+	virtualisation.docker.enable = true;
 	programs.steam = {
 		enable = true;
 		remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
@@ -72,6 +72,7 @@
 			"video"
 			"audio"
 			"networkmanager"
+			"docker"
 		];
 		openssh.authorizedKeys.keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIPI4hVcnH2C5Rq0Pkgv+rw2h1dAm2QQdyboDfW7kUlw giom" ];
 	};
