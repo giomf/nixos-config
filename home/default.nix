@@ -37,6 +37,7 @@
 		btop
 		unzip
         zellij
+        wget
 
 		# Coding
 		git

@@ -22,8 +22,11 @@
 	};
 	
 	nixpkgs.config.allowUnfree = true;
-	environment.defaultPackages = with pkgs; [];
 	environment.systemPackages = with pkgs; [];
+	environment.defaultPackages = with pkgs; [
+		usbutils
+		file
+	];
 
 	# Needed for backlight controll as non root
 	programs.light.enable = true;
