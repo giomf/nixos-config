@@ -41,7 +41,14 @@
 			cd = "builtin cd $argv && eza -l --no-time";
 			fish_greeting = "";
 			fish_right_prompt = "date '+%H:%M:%S'";
-			fish_prompt = "printf '[%s@%s%s%s]%s %s%s%s\n> ' $USER (set_color red) (prompt_hostname) (set_color normal) (fish_git_prompt) (set_color green) (prompt_pwd) (set_color normal)";
+			in_nix = "if set -q IN_NIX_SHELL; printf '[%s%s%s]' ; end";
+			fish_prompt = ''
+				if set -q IN_NIX_SHELL
+					printf '[%s@%s%s%s] [%snix-shell%s]%s %s%s%s\n> ' $USER (set_color red) (prompt_hostname) (set_color normal) (set_color red) (set_color normal) (fish_git_prompt) (set_color green) (prompt_pwd) (set_color normal)
+				else	
+					printf '[%s@%s%s%s]%s %s%s%s\n> ' $USER (set_color red) (prompt_hostname) (set_color normal) (fish_git_prompt) (set_color green) (prompt_pwd) (set_color normal)
+				end
+			'';
 		};
 	};
 }
