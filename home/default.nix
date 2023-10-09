@@ -38,6 +38,7 @@
 		unzip
         zellij
         wget
+        docker-compose
 
 		# Coding
 		git
