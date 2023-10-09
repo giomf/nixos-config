@@ -3,6 +3,7 @@
 {
     imports = [
         ./fish.nix
+        ./joshuto.nix
         ./wm
     ];
 
@@ -30,7 +31,6 @@
 	# Packages
 	home.packages = with pkgs; [
 		# Base
-		ranger
 		eza
 		bat
 		flameshot
@@ -39,6 +39,7 @@
         zellij
         wget
         docker-compose
+        fzf
 
 		# Coding
 		git
