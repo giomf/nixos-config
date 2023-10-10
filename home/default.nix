@@ -4,6 +4,7 @@
     imports = [
         ./fish.nix
         ./joshuto.nix
+        ./helix.nix
         ./wm
     ];
 
@@ -45,11 +46,6 @@
 		git
 		rustup
 	];
-
-	programs.vim = {
-		enable = true;
-		defaultEditor = true;
-	};
 
 	# Services
 	services.ssh-agent.enable = true;

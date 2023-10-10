@@ -21,7 +21,7 @@
 			mimetype = {
 				text = {
 					app_list = [
-						{ command = "vim"; fork = false; silent = false; }
+						{ command = "hx"; fork = false; silent = false; }
 					];
 				};
 			};
