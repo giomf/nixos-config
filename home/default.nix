@@ -5,7 +5,6 @@
         ./fish.nix
         ./joshuto.nix
         ./helix.nix
-        ./wm
     ];
 
     # Home Manager needs a bit of information about you and the
