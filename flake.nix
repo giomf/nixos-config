@@ -54,6 +54,7 @@
 				};
 				modules = [
 					./machines/wsl
+					nixos-wsl.nixosModules.wsl
 					home-manager.nixosModules.home-manager
 					{
 						home-manager.useGlobalPkgs = true;
