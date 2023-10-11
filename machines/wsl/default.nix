@@ -4,20 +4,23 @@
 	imports = [
 		../common.nix
 	];
+
 	system.stateVersion = "23.05";
 
-    wsl = {
-        enable = true;
-        wslConf.automount.root = "/mnt";
-        defaultUser = "giom";
-        startMenuLaunchers = true;
+  wsl = {
+      enable = true;
+      wslConf.automount.root = "/mnt";
+      defaultUser = "giom";
+      startMenuLaunchers = true;
 
-        # Enable native Docker support
-        # docker-native.enable = true;
+      # Enable native Docker support
+      # docker-native.enable = true;
 
-        # Enable integration with Docker Desktop (needs to be installed)
-        # docker-desktop.enable = true;
+      # Enable integration with Docker Desktop (needs to be installed)
+      # docker-desktop.enable = true;
   };
+
+  networking.hostName = "wsl";
 
 }
 

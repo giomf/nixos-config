@@ -77,8 +77,11 @@
 	};
 
 	# Networking
-	networking.networkmanager.enable = true;
-
+	networking. = {
+		hostName = "glap";
+		networkmanager.enable = true;
+	};
+  
 	# Power management
 	powerManagement.cpuFreqGovernor = "performance";
 
