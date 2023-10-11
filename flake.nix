@@ -28,7 +28,7 @@
 			home_wm = nixpkgs.lib.mkMerge[home wm];
 		in
 		{
-			"nixos" = nixpkgs.lib.nixosSystem {
+			"glap" = nixpkgs.lib.nixosSystem {
 				system = "x86_64-linux";
 				modules = [
 					./machines/l380

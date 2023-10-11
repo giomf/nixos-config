@@ -77,7 +77,7 @@
 	};
 
 	# Networking
-	networking. = {
+	networking = {
 		hostName = "glap";
 		networkmanager.enable = true;
 	};
