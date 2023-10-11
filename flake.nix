@@ -30,9 +30,6 @@
 		{
 			"nixos" = nixpkgs.lib.nixosSystem {
 				system = "x86_64-linux";
-				specialArgs = {
-					wm = true;
-				};
 				modules = [
 					./machines/l380
 					home-manager.nixosModules.home-manager
