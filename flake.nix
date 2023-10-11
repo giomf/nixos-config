@@ -31,7 +31,7 @@
 			"glap" = nixpkgs.lib.nixosSystem {
 				system = "x86_64-linux";
 				modules = [
-					./machines/l380
+					./hosts/l380
 					home-manager.nixosModules.home-manager
 					{
 						home-manager.useGlobalPkgs = true;
@@ -50,7 +50,7 @@
 					inherit nixos-wsl;
 				};
 				modules = [
-					./machines/wsl
+					./hosts/wsl
 					nixos-wsl.nixosModules.wsl
 					home-manager.nixosModules.home-manager
 					{
