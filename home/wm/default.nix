@@ -15,6 +15,7 @@
 		pavucontrol
 		pulseaudio
 		flameshot
+		networkmanagerapplet
 
 		# Office
 		libreoffice-qt

@@ -20,6 +20,7 @@
 			$menu = bemenu-run
 
 			exec-once = light -N 10
+			exec-once = nm-applet --indicator
 
 			bind = $mod, return, exec, $term -e zellij attach -c TERMINAL
 			bind = $mod, space, exec, $menu
