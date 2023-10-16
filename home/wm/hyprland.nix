@@ -21,6 +21,7 @@
 
 			exec-once = light -N 10
 			exec-once = nm-applet --indicator
+			exec-once = nextcloud
 
 			bind = $mod, return, exec, $term -e zellij attach -c TERMINAL
 			bind = $mod, space, exec, $menu
