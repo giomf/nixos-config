@@ -40,6 +40,7 @@
         wget
         docker-compose
         fzf
+        dig
 
 		# Coding
 		git
