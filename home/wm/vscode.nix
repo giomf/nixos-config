@@ -13,6 +13,7 @@
 			mads-hartmann.bash-ide-vscode
 			foxundermoon.shell-format
 			mhutchie.git-graph
+			ms-vscode-remote.remote-ssh
 		];
 		userSettings = {
 			"workbench.colorTheme" = "Visual Studio Dark";
