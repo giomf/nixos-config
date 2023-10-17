@@ -21,6 +21,6 @@
   };
 
   networking.hostName = "wsl";
-
+  environment.systemPackages = with pkgs; [ nodejs ];
 }
 
