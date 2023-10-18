@@ -1,0 +1,22 @@
+layout {
+    pane {
+        name "MK5"
+        cwd "~/repos/claas/mk5"
+    }
+    pane {
+        name "UCM"
+        cwd "~/repos/claas/ucm"
+    }
+    pane {
+        name "QUARTUS"
+        cwd "~/repos/claas/quartus"
+    }
+    pane {
+        name "INA"
+        cwd "~/repos/claas/ina"
+    }
+    pane {
+        name "DBT"
+        cwd "~/repos/claas/dbt"
+    }
+}

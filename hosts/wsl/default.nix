@@ -9,24 +9,22 @@
 
   	system.activationScripts.bin-bash-hack = {
 		text = ''
-			ln -s /run/current-system/sw/bin/bash /bin/bash  
+			[[ ! -f /bin/bash ]] && ln -s /run/current-system/sw/bin/bash /bin/bash
+			[[ ! -f /usr/bin/perl ]] && ln -s /run/current-system/sw/bin/perl /usr/bin/perl
 		'';
  	 };
 
   	wsl = {
 		enable = true;
-		wslConf.automount.root = "/mnt";
 		defaultUser = "giom";
 		startMenuLaunchers = true;
-
-		# Enable native Docker support
-		# docker-native.enable = true;
-
-		# Enable integration with Docker Desktop (needs to be installed)
-		# docker-desktop.enable = true;
+		wslConf = {
+			automount.root = "/mnt";
+			network.generateHosts = false;
+		};
   	};
 
-  	networking.hostName = "wsl";
+	networking.hostName = "wsl";
   	environment.systemPackages = with pkgs; [ nodejs ];
 }
 

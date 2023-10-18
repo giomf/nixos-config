@@ -21,13 +21,7 @@
 	};
 
 	outputs = inputs@{ nixpkgs, home-manager, nur, nixos-wsl, ... }: {
-		nixosConfigurations = 
-		let 
-			home = import ./home;
-			wm = import ./home/wm;
-			home_wm = nixpkgs.lib.mkMerge[home wm];
-		in
-		{
+		nixosConfigurations = {
 			"glap" = nixpkgs.lib.nixosSystem {
 				system = "x86_64-linux";
 				modules = [
@@ -36,7 +30,7 @@
 					{
 						home-manager.useGlobalPkgs = true;
 						home-manager.useUserPackages = true;
-						home-manager.users.giom = home_wm;
+						home-manager.users.giom = ./hosts/l380/home.nix;
 						nixpkgs.overlays = [
 							nur.overlay
 						];
@@ -56,7 +50,7 @@
 					{
 						home-manager.useGlobalPkgs = true;
 						home-manager.useUserPackages = true;
-						home-manager.users.giom = home;
+						home-manager.users.giom = ./hosts/wsl/home.nix;
 					}
 				];
 			};	
