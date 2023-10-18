@@ -14,6 +14,7 @@
 			foxundermoon.shell-format
 			mhutchie.git-graph
 			ms-vscode-remote.remote-ssh
+			yzhang.markdown-all-in-one
 		];
 		userSettings = {
 			"workbench.colorTheme" = "Visual Studio Dark";
