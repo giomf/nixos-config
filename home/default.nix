@@ -5,6 +5,7 @@
         ./fish.nix
         ./joshuto.nix
         ./helix.nix
+        ./starship.nix
     ];
 
     # Home Manager needs a bit of information about you and the
@@ -41,6 +42,7 @@
         docker-compose
         fzf
         dig
+        du-dust
 
 		# Coding
 		git
