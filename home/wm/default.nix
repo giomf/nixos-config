@@ -14,7 +14,6 @@
 		alacritty
 		pavucontrol
 		pulseaudio
-		flameshot
 		networkmanagerapplet
 
 		# Office

@@ -21,6 +21,11 @@
 		file
 	];
 
+	xdg.portal = {
+		enable = true;
+		wlr.enable = true;
+	};
+
 	programs = {
 		# Needed for backlight controll as non root
 		light.enable = true;
