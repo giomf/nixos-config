@@ -21,6 +21,7 @@
 			"window.zoomLevel" = 2;
 			"editor.tabSize" = 4;
 			"editor.indentSize" = "tabSize";
+  			"editor.fontFamily" = "'FiraCode Nerd Font Mono', monospace";
 			"editor.minimap.enabled" = false;
 			"[nix]"."editor.tabSize" = 4;
 			"nixEnvSelector.nixFile" = "\${workspaceRoot}/shell.nix";
