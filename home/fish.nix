@@ -27,6 +27,10 @@
 			set -g __fish_git_prompt_char_upstream_prefix \" \"
 
 			set -g __fish_git_prompt_color_cleanstate green
+			
+			bind \\ef fzf-file-widget
+			bind \\ed fzf-cd-widget
+			bind \\er fzf-history-widget
 		";
 		shellAliases = {
 			# ls = eza
