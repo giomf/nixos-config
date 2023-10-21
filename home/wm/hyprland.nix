@@ -6,8 +6,9 @@
 		gammastep
 		swaylock-effects
 		sway-contrib.grimshot
+		swaybg
 	];
-
+	
   	wayland.windowManager.hyprland = 
 	let
 		colors = import ./colors.nix;
@@ -23,6 +24,7 @@
 			exec-once = light -N 10
 			exec-once = nm-applet --indicator
 			exec-once = nextcloud
+			exec-once = swaybg --mode fill --image ${./wallpaper.png}
 
 			bind = $mod, return, exec, $term -e zellij attach -c TERMINAL
 			bind = $mod, space, exec, $menu
