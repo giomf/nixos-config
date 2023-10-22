@@ -9,10 +9,14 @@
 
 	system.stateVersion = "23.05";
 
-	# Bootloader
-	boot.loader.systemd-boot.enable = true;
-	boot.loader.systemd-boot.configurationLimit = 10;
-	boot.loader.efi.canTouchEfiVariables = true;
+	boot = {
+		kernelParams = ["quiet"]; 
+		loader = {
+			systemd-boot.enable = true;
+			systemd-boot.configurationLimit = 10;
+			efi.canTouchEfiVariables = true;
+		};
+	};
 
 	nixpkgs.config.allowUnfree = true;
 	environment.systemPackages = with pkgs; [];
