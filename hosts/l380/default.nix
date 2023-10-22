@@ -22,7 +22,6 @@
 	environment.systemPackages = with pkgs; [];
 	environment.defaultPackages = with pkgs; [
 		usbutils
-		file
 	];
 
 	xdg.portal = {

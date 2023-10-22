@@ -43,6 +43,7 @@
         fzf
         dig
         du-dust
+        file
 
 		# Coding
 		git
