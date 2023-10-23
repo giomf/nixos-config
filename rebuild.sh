@@ -8,6 +8,7 @@ if [[ -z "$1" || "$1" == "help" ]]; then
     echo -e "\tswitch"
     echo -e "\ttest"
     echo -e "\tclean"
+    echo -e "\pi-image"
 
 elif [[ "$1" == "switch" ]]; then
     sudo nixos-rebuild switch --flake .
@@ -16,6 +17,8 @@ elif [[ "$1" == "test" ]]; then
 elif [[ "$1" == "clean" ]]; then
     sudo nix profile wipe-history --profile /nix/var/nix/profiles/system
     sudo nix store gc --debug
+elif [[ "$1" == "pi-image" ]]; then
+    nix build .#nixosConfigurations.pi.config.system.build.sdImage
 else
     echo "ERROR: Command $1 not found. Aborting!"
     echo "Use help"

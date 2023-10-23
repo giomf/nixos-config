@@ -41,16 +41,32 @@
         ]
       },
       "locked": {
-        "lastModified": 1697838989,
-        "narHash": "sha256-hwVlO+st8vWJO6iy3/JbMHrUyY4Ak7xUSmffoWqBPUg=",
+        "lastModified": 1698069042,
+        "narHash": "sha256-L6U8qNhQ3KjQ04voQ+QLQCnFbD5NuIlqC9DO9T7jIZY=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "ae631b0b20f06f7d239d160723d228891ddb2fe0",
+        "rev": "f540f30f1f3c76b68922550dcf5f78f42732fd37",
         "type": "github"
       },
       "original": {
         "owner": "nix-community",
         "repo": "home-manager",
+        "type": "github"
+      }
+    },
+    "nixos-hardware": {
+      "locked": {
+        "lastModified": 1698053470,
+        "narHash": "sha256-sP8D/41UiwC2qn0X40oi+DfuVzNHMROqIWdSdCI/AYA=",
+        "owner": "NixOS",
+        "repo": "nixos-hardware",
+        "rev": "80d98a7d55c6e27954a166cb583a41325e9512d7",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "master",
+        "repo": "nixos-hardware",
         "type": "github"
       }
     },
@@ -63,11 +79,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1697459493,
-        "narHash": "sha256-HH8ePJIVAsiDHIdS4qnKQ9o4X0KTVGA9cfHBplKqpfs=",
+        "lastModified": 1698050700,
+        "narHash": "sha256-qsillHryzTB1RKtIFV4gyhtjpuh8hvlihcJJ8ksZDaM=",
         "owner": "nix-community",
         "repo": "NixOS-WSL",
-        "rev": "b63b328577f1cb5839f8ecc4fd05040335d4a55a",
+        "rev": "fe027b673a19650d7e7a6da9325efde134d37383",
         "type": "github"
       },
       "original": {
@@ -94,11 +110,11 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1697921140,
-        "narHash": "sha256-ADclFPuQFa4gX2UX8gEPhib/LzsDqnrn0efbgJMO/SI=",
+        "lastModified": 1698094615,
+        "narHash": "sha256-FAWLxg2kl1pu8BrL8cp6B7aK295cjY7ErhC5SOzDVgQ=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "38779b6b3c4b7373fc59e0b320c7834589fa8757",
+        "rev": "986d362583f59641220181e14fec7f42ac5b5910",
         "type": "github"
       },
       "original": {
@@ -110,6 +126,7 @@
     "root": {
       "inputs": {
         "home-manager": "home-manager",
+        "nixos-hardware": "nixos-hardware",
         "nixos-wsl": "nixos-wsl",
         "nixpkgs": "nixpkgs",
         "nur": "nur"

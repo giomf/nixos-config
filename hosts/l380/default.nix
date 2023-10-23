@@ -16,9 +16,10 @@
 			systemd-boot.configurationLimit = 10;
 			efi.canTouchEfiVariables = true;
 		};
+		# Allow building img for pi
+		binfmt.emulatedSystems = [ "aarch64-linux" ];
 	};
 
-	nixpkgs.config.allowUnfree = true;
 	environment.systemPackages = with pkgs; [];
 	environment.defaultPackages = with pkgs; [
 		usbutils

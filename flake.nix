@@ -18,9 +18,12 @@
 			url = "github:nix-community/NixOS-WSL";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
+
+		# NixOs hardware quirks
+		nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 	};
 
-	outputs = inputs@{ nixpkgs, home-manager, nur, nixos-wsl, ... }: {
+	outputs = inputs@{ nixpkgs, home-manager, nur, nixos-wsl, nixos-hardware, ... }: {
 		nixosConfigurations = {
 			"glap" = nixpkgs.lib.nixosSystem {
 				system = "x86_64-linux";
@@ -53,7 +56,25 @@
 						home-manager.users.giom = ./hosts/wsl/home.nix;
 					}
 				];
-			};	
+			};
+
+			"pi" = nixpkgs.lib.nixosSystem {
+				system = "aarch64-linux";
+				specialArgs = {
+					inherit nixos-hardware;
+				};
+				modules = [
+					"${nixpkgs}/nixos/modules/installer/sd-card/sd-image-aarch64.nix"
+					./hosts/pi
+					nixos-hardware.nixosModules.raspberry-pi-4
+					home-manager.nixosModules.home-manager
+					{
+						home-manager.useGlobalPkgs = true;
+						home-manager.useUserPackages = true;
+						home-manager.users.giom = ./hosts/pi/home.nix;
+					}
+				];
+			};
 		};
 	};
 }
