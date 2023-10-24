@@ -20,6 +20,7 @@
 		libreoffice-qt
 		keepassxc
 		thunderbird
+		speedcrunch
 		
 		# Social
 		telegram-desktop
