@@ -1,6 +1,13 @@
 { config, pkgs, ... }:
 
 {
+
+		# Packages
+	home.packages = with pkgs; [
+		nixpkgs-fmt
+		rnix-lsp
+	];
+
     programs.vscode = {
 		enable = true;
 		enableUpdateCheck = false;
