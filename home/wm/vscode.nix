@@ -2,10 +2,13 @@
 
 {
 
-		# Packages
+	# Packages
 	home.packages = with pkgs; [
+    # for nix IDE
 		nixpkgs-fmt
 		rnix-lsp
+    # for bash IDE
+    shellcheck
 	];
 
     programs.vscode = {
