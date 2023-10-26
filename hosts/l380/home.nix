@@ -1,8 +1,8 @@
-{ config, pkgs, ... }:
+{ inputs, config, pkgs, ... }:
 
 {
-    imports = [
-    	../../home
-      ../../home/wm
-    ];
+  imports = [
+    ../../home
+    ../../home/wm
+  ];
 }

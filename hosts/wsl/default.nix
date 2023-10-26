@@ -1,4 +1,4 @@
-{ config, pkgs, nixos-wsl, ... }:
+{ config, pkgs, ... }:
 
 {
 	imports = [

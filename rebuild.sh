@@ -8,7 +8,7 @@ if [[ -z "$1" || "$1" == "help" ]]; then
     echo -e "\tswitch"
     echo -e "\ttest"
     echo -e "\tclean"
-    echo -e "\pi-image"
+    echo -e "\tpi-image"
 
 elif [[ "$1" == "switch" ]]; then
     sudo nixos-rebuild switch --flake .
