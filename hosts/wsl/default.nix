@@ -34,23 +34,6 @@
 
 	networking = {
 		hostName = "wsl";
-		extraHosts = ''
-			# Misc
-			10.2.0.145      mstfs.claas.com
-			10.1.4.65   		dehwllcesnexus1
-
-			# Jumphost
-			10.53.13.172    D2210620
-			10.53.13.73     D2346034
-
-			# Windows Client
-			10.53.7.250     D2203141
-
-			# Buildnodes
-			10.1.4.25   		dehwlleitbld01
-			10.1.4.98   		dehwlleitbld02
-			10.53.13.130    D2295841
-		'';
 	};
 }
 
