@@ -13,7 +13,8 @@
 		nixpkgs-fmt
 		rnix-lsp
     # for bash IDE
-    shellcheck ];
+    shellcheck
+    ];
 
     xdg.configFile."zellij/layouts/musmol.kdl".source = ./musmol.kdl;
 }

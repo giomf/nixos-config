@@ -48,7 +48,6 @@
 
 		# Coding
 		git
-		rustup
 	];
 
 	# Services
