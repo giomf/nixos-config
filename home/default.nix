@@ -37,13 +37,14 @@
 		flameshot
 		btop
 		unzip
-        zellij
-        wget
-        docker-compose
-        fzf
-        dig
-        du-dust
-        file
+    zellij
+    wget
+    docker-compose
+    fzf
+    dig
+    du-dust
+    file
+    kmon
 
 		# Coding
 		git
