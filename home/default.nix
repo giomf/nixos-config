@@ -11,8 +11,8 @@
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   home = {
-    username = "giom";
-    homeDirectory = "/home/giom";
+    username = "guif";
+    homeDirectory = "/home/guif";
 
     # This value determines the Home Manager release that your
     # configuration is compatible with. This helps avoid breakage
@@ -45,7 +45,6 @@
     du-dust
     file
     kmon
-    numbat
 
     # Coding
     git

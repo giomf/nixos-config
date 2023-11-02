@@ -39,7 +39,7 @@
   	};
 
   	# User
-	users.users.giom = {
+	users.users.guif = {
 		isNormalUser = true;
 		shell = pkgs.fish;
 		extraGroups = [

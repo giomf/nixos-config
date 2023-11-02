@@ -59,7 +59,7 @@
   };
 
   # User
-  users.users.giom = {
+  users.users.guif = {
     extraGroups = [
       "video"
       "audio"

@@ -13,9 +13,9 @@
 	environment.defaultPackages = with pkgs; [];
 
 	# User
-	users.users.giom = {
+	users.users.guif = {
 		openssh.authorizedKeys.keys = [
-        	"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIPI4hVcnH2C5Rq0Pkgv+rw2h1dAm2QQdyboDfW7kUlw giom@glap"
+        	"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIPI4hVcnH2C5Rq0Pkgv+rw2h1dAm2QQdyboDfW7kUlw guif@glap"
         ];
 	};
 

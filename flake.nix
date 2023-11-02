@@ -33,7 +33,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.giom = ./hosts/l380/home.nix;
+            home-manager.users.guif = ./hosts/l380/home.nix;
             nixpkgs.overlays = [
               nur.overlay
             ];
@@ -50,7 +50,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.giom = ./hosts/wsl/home.nix;
+            home-manager.users.guif = ./hosts/wsl/home.nix;
           }
         ];
       };
@@ -65,7 +65,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.giom = ./hosts/pi/home.nix;
+            home-manager.users.guif = ./hosts/pi/home.nix;
           }
         ];
       };

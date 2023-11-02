@@ -9,9 +9,9 @@
 		enable = true;
 		package = pkgs.firefox-wayland;
 		profiles = {
-			giom = {
+			guif = {
 				id = 0;
-				name = "giom";
+				name = "guif";
 				extensions = with pkgs.nur.repos.rycee.firefox-addons; [
 					ublock-origin
 					darkreader

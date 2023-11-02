@@ -16,7 +16,7 @@
 
   	wsl = {
 		enable = true;
-		defaultUser = "giom";
+		defaultUser = "guif";
 		startMenuLaunchers = true;
 		wslConf = {
 			automount.root = "/mnt";
