@@ -45,6 +45,7 @@
     du-dust
     file
     kmon
+    numbat
 
     # Coding
     git
