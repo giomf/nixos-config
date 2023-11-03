@@ -20,6 +20,9 @@
     binfmt.emulatedSystems = [ "aarch64-linux" ];
   };
 
+  # Allow wayland support in all chrome and most electron apps
+	environment.sessionVariables.NIXOS_OZONE_WL = "1";
+  
   environment.systemPackages = with pkgs; [ ];
   environment.defaultPackages = with pkgs; [
     usbutils

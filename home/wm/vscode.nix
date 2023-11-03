@@ -35,6 +35,8 @@
 			"editor.minimap.enabled" = false;
 			"[nix]"."editor.tabSize" = 4;
 			"nixEnvSelector.nixFile" = "\${workspaceRoot}/shell.nix";
+			# Workaround for: https://github.com/NixOS/nixpkgs/issues/246509
+			"window.titleBarStyle" = "custom";
 		};
 	};
 
