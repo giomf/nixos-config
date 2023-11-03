@@ -34,6 +34,7 @@
 			bind = $mod, M, exec, thunderbird
 			bind = $mod, T, exec, $term -e btop
 			bind = $mod, L, exec, grimshot copy area
+			bind = $mod, C, exec, $term -e numbat
 			bind = $mod, J, exec, bash -c if pgrep gammastep; then pkill gammastep; else gammastep -O 4500; fi
 			bind = $mod, escape, exec, ${pkgs.swaylock-effects}/bin/swaylock -f -S --clock --effect-blur 10x10 --fade-in 1
 
