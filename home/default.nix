@@ -46,6 +46,7 @@
     file
     kmon
     numbat
+    ripgrep
 
     # Coding
     git
