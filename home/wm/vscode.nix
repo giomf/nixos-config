@@ -25,6 +25,7 @@
       mhutchie.git-graph
       ms-vscode-remote.remote-ssh
       yzhang.markdown-all-in-one
+	  eamodio.gitlens
     ];
     userSettings = {
       "workbench.colorTheme" = "Visual Studio Dark";
