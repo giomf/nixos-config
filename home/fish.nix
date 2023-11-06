@@ -1,9 +1,9 @@
 { config, ... }:
 
 {
-   programs.fish = {
-		enable = true;
-		shellInit = "
+  programs.fish = {
+    enable = true;
+    shellInit = "
 			set -g __fish_git_prompt_show_informative_status true
 			set -g __fish_git_prompt_showstashstate true
 			set -g __fish_git_prompt_showupstream informative
@@ -32,27 +32,27 @@
 			bind \\ed fzf-cd-widget
 			bind \\er fzf-history-widget
 		";
-		shellAliases = {
-			# ls = eza
-			"ls" = "eza -lbghF";
-			"ll" = "eza -lbghF";
-			"la" = "eza -lbghFa";
-			"lt" = "eza --tree --level=2";
-			# cat = bat
-			"cat" = "bat";
-		};
-		functions = {
-			cd = "builtin cd $argv && eza -l --no-time";
-			fish_greeting = "";
-			fish_right_prompt = "date '+%H:%M:%S'";
-			in_nix = "if set -q IN_NIX_SHELL; printf '[%s%s%s]' ; end";
-			fish_prompt = ''
-				if set -q IN_NIX_SHELL
-					printf '[%s@%s%s%s] [%snix-shell%s]%s %s%s%s\n> ' $USER (set_color red) (prompt_hostname) (set_color normal) (set_color red) (set_color normal) (fish_git_prompt) (set_color green) (prompt_pwd) (set_color normal)
-				else	
-					printf '[%s@%s%s%s]%s %s%s%s\n> ' $USER (set_color red) (prompt_hostname) (set_color normal) (fish_git_prompt) (set_color green) (prompt_pwd) (set_color normal)
-				end
-			'';
-		};
-	};
+    shellAliases = {
+      # ls = eza
+      "ls" = "eza -lbghF";
+      "ll" = "eza -lbghF";
+      "la" = "eza -lbghFa";
+      "lt" = "eza --tree --level=2";
+      # cat = bat
+      "cat" = "bat";
+    };
+    functions = {
+      cd = "builtin cd $argv && eza -l --no-time";
+      fish_greeting = "";
+      fish_right_prompt = "date '+%H:%M:%S'";
+      in_nix = "if set -q IN_NIX_SHELL; printf '[%s%s%s]' ; end";
+      fish_prompt = ''
+        				if set -q IN_NIX_SHELL
+        					printf '[%s@%s%s%s] [%snix-shell%s]%s %s%s%s\n> ' $USER (set_color red) (prompt_hostname) (set_color normal) (set_color red) (set_color normal) (fish_git_prompt) (set_color green) (prompt_pwd) (set_color normal)
+        				else	
+        					printf '[%s@%s%s%s]%s %s%s%s\n> ' $USER (set_color red) (prompt_hostname) (set_color normal) (fish_git_prompt) (set_color green) (prompt_pwd) (set_color normal)
+        				end
+        			'';
+    };
+  };
 }
