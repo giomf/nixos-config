@@ -47,6 +47,7 @@
     kmon
     numbat
     ripgrep
+    dogdns
 
     # Coding
     git
