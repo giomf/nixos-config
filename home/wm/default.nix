@@ -6,12 +6,12 @@
     ./vscode.nix
     ./browsers.nix
     ./waybar.nix
+    ./alacritty.nix
   ];
 
   # Packages
   home.packages = with pkgs; [
     # Base
-    alacritty
     pavucontrol
     pulseaudio
     networkmanagerapplet

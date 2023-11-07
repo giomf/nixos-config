@@ -4,15 +4,8 @@
   programs.helix = {
     enable = true;
     defaultEditor = true;
-    #        settings = {
-    #            theme = "theme";
-    #        };
-    themes = {
-      theme = {
-        ui = {
-          background = "black";
-        };
-      };
+    settings = {
+      theme = "github_dark_dimmed";
     };
   };
 }

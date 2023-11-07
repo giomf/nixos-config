@@ -25,10 +25,11 @@
       mhutchie.git-graph
       ms-vscode-remote.remote-ssh
       yzhang.markdown-all-in-one
-	  eamodio.gitlens
+	    eamodio.gitlens
+      github.github-vscode-theme
     ];
     userSettings = {
-      "workbench.colorTheme" = "Visual Studio Dark";
+      "workbench.colorTheme" = "GitHub Dark";
       "window.zoomLevel" = 2;
       "editor.tabSize" = 2;
       "editor.indentSize" = "tabSize";
