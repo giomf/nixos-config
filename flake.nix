@@ -21,19 +21,26 @@
 
     # NixOs hardware quirks
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+
+    agenix = {
+      url = "github:ryantm/agenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, nur, nixos-wsl, nixos-hardware, ... }: {
+  outputs = inputs@{ self, nixpkgs, home-manager, nur, nixos-wsl, nixos-hardware, agenix, ... }: {
     nixosConfigurations = {
       "glap" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           ./hosts/l380
+          agenix.nixosModules.default
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.guif = ./hosts/l380/home.nix;
+            home-manager.extraSpecialArgs = { inherit agenix; };
             nixpkgs.overlays = [
               nur.overlay
             ];

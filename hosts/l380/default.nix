@@ -9,6 +9,15 @@
 
   system.stateVersion = "23.05";
 
+  age = {
+    secrets.signing-key.file = ../../secrets/signing-key.age;
+    identityPaths = [ /home/guif/.ssh/agenix ];
+  };
+  
+  nix.settings.secret-key-files = [
+    "${config.age.secrets.signing-key.path}"
+  ];
+
   boot = {
     kernelParams = [ "quiet" ];
     loader = {
