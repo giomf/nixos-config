@@ -40,7 +40,6 @@
     wget
     docker-compose
     fzf
-    dig
     du-dust
     file
     kmon
