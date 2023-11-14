@@ -34,7 +34,6 @@
     # Base
     eza
     bat
-    flameshot
     btop
     unzip
     zellij
