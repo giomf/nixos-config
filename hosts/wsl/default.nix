@@ -25,6 +25,7 @@
   };
 
   virtualisation.docker = {
+    enable = true;
     daemon.settings = {
       insecure-registries = [ "dehwllcesnexus1:18080" ];
     };

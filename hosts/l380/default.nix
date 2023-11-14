@@ -47,6 +47,8 @@
     };
   };
 
+  virtualisation.docker.enable = true;
+
   # Security
   security = {
     pam.services.swaylock = { };

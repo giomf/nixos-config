@@ -3,6 +3,7 @@
 {
   imports = [
     ../common.nix
+    ./containers/pihole.nix
   ];
 
   system.stateVersion = "23.05";

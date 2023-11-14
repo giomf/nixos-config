@@ -30,7 +30,6 @@
   };
 
   nixpkgs.config.allowUnfree = true;
-  virtualisation.docker.enable = true;
   programs.fish.enable = true;
 
   security = {
