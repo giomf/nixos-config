@@ -4,4 +4,6 @@
   imports = [
     ../../home
   ];
+
+  home.packages = with pkgs; [];
 }

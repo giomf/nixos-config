@@ -1,12 +1,8 @@
-{ config, pkgs, agenix, ... }:
+{ config, pkgs,  ... }:
 
 {
   imports = [
     ../../home
     ../../home/wm
-  ];
-
-  home.packages = with pkgs; [
-    agenix.packages.${system}.default 
   ];
 }

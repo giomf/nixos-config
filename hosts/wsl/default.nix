@@ -30,8 +30,13 @@
     };
   };
 
-  networking = {
-    hostName = "wsl";
-  };
+	networking = 
+   let
+      preview_script = (pkgs.writeShellScript "preview_script" (builtins.readFile ./preview_script.sh));
+    in
+  {
+		hostName = "wsl";
+		extraHosts = (builtins.readFile ./hosts);
+	};
 }
 

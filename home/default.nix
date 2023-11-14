@@ -51,10 +51,14 @@
 
     # Coding
     git
+    git-crypt
+    gnupg
     nixpkgs-review
     gh
   ];
 
   # Services
   services.ssh-agent.enable = true;
+  services.gpg-agent.enable = true;
+
 }
