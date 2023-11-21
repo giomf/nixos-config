@@ -46,6 +46,7 @@
     numbat
     ripgrep
     dogdns
+    direnv
 
     # Coding
     git

@@ -20,7 +20,7 @@
       jnoortheen.nix-ide
       rust-lang.rust-analyzer
       streetsidesoftware.code-spell-checker
-      arrterian.nix-env-selector
+      mkhl.direnv
       mads-hartmann.bash-ide-vscode
       foxundermoon.shell-format
       mhutchie.git-graph
