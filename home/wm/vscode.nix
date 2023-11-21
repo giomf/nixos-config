@@ -9,6 +9,7 @@
     rnix-lsp
     # for bash IDE
     shellcheck
+    typst-fmt
   ];
 
   programs.vscode = {
@@ -27,6 +28,8 @@
       yzhang.markdown-all-in-one
 	    eamodio.gitlens
       github.github-vscode-theme
+      nvarner.typst-lsp
+      tomoki1207.pdf
     ];
     userSettings = {
       "workbench.colorTheme" = "GitHub Dark";
@@ -39,6 +42,7 @@
       "nixEnvSelector.nixFile" = "\${workspaceRoot}/shell.nix";
       # Workaround for: https://github.com/NixOS/nixpkgs/issues/246509
       "window.titleBarStyle" = "custom";
+      "typst-lsp.experimentalFormatterMode" = "on";
     };
   };
 
