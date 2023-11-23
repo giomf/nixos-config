@@ -20,14 +20,13 @@
       systemd-boot.configurationLimit = 10;
       efi.canTouchEfiVariables = true;
     };
-    boot.initrd.luks.devices = [
-      {
-        name = "root";
-        device = "/dev/disk/by-uuid/";
+    initrd.luks.devices = {
+     root = {
+        device = "/dev/disk/by-uuid/c3363524-bc20-42b0-aadb-04b8f906a245";
         preLVM = true;
         allowDiscards = true;
-      }
-    ];
+      };
+    };
     # Allow building img for pi
     binfmt.emulatedSystems = [ "aarch64-linux" ];
   };
