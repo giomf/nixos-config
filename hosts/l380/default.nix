@@ -9,9 +9,9 @@
 
   system.stateVersion = "23.05";
  
-  nix.settings.secret-key-files = [
-    "${./signing.key}"
-  ];
+  #nix.settings.secret-key-files = [
+  #  "${./signing.key}"
+  #];
 
   boot = {
     kernelParams = [ "quiet" ];
