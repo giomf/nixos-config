@@ -38,13 +38,18 @@
   };
 
   # User
-  users.users.guif = {
-    isNormalUser = true;
-    shell = pkgs.fish;
-    extraGroups = [
-      "wheel"
-      "docker"
-    ];
+  users.users = {
+    #disable root password
+    root.hashedPassword = "!";
+    guif = {
+      isNormalUser = true;
+      shell = pkgs.fish;
+      initialHashedPassword = "$y$j9T$hHZ1NIxqNvPno5mkSDSjI1$PojSMDbnHYHcrrdaTw74w6tSlLIRvMCbCbaCiDpMx3.";
+      extraGroups = [
+        "wheel"
+        "docker"
+      ];
+    };
   };
 }
 
