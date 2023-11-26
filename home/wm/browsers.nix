@@ -16,6 +16,7 @@
           ublock-origin
           darkreader
           keepassxc-browser
+          floccus
         ];
       };
     };
