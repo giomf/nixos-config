@@ -10,6 +10,7 @@
   };
 
   fonts = {
+    fontDir.enable = true;
     packages = with pkgs; [
       font-awesome
       noto-fonts
@@ -17,9 +18,12 @@
       (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" "FiraCode" ]; })
     ];
     fontconfig = {
+      enable = true;
       defaultFonts = {
-        sansSerif = [ "noto-fonts" ];
-        emoji = [ "noto-fonts-emoji" ];
+        serif = [ "Noto Serif" ];
+        sansSerif = [ "Noto Sans" ];
+        monospace = [ "Noto Sans Mono" ];
+        emoji = [ "Noto Color Emoji" ];
       };
     };
   };
