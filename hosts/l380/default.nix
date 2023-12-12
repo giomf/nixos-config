@@ -15,13 +15,15 @@
 
   boot = {
     kernelParams = [ "quiet" ];
+    initrd.systemd.enable = true;
+    plymouth.enable = true;
     loader = {
       systemd-boot.enable = true;
       systemd-boot.configurationLimit = 10;
       efi.canTouchEfiVariables = true;
     };
     initrd.luks.devices = {
-     root = {
+      root = {
         device = "/dev/disk/by-uuid/c3363524-bc20-42b0-aadb-04b8f906a245";
         preLVM = true;
         allowDiscards = true;
