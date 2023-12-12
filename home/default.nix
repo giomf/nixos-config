@@ -47,6 +47,8 @@
     ripgrep
     dogdns
     direnv
+    duf
+    hexyl
 
     # Coding
     git
