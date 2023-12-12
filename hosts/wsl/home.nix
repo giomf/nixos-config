@@ -14,6 +14,7 @@
     rnix-lsp
     # for bash IDE
     shellcheck
+    python310Packages.yapf
   ];
 
   xdg.configFile."zellij/layouts/musmol.kdl".source = ./musmol.kdl;
