@@ -38,8 +38,18 @@
       "ll" = "eza -lbghF";
       "la" = "eza -lbghFa";
       "lt" = "eza --tree --level=2";
+
       # cat = bat
       "cat" = "bat";
+
+      # git
+      "gch" = "git checkout";
+      "gph" = "git push";
+      "gpl" = "git pull";
+      "gca" = "git commit -a";
+      "gre" = "git rebase";
+      "gst" = "git status";
+      "gdi" = "git diff";
     };
     functions = {
       cd = "builtin cd $argv && eza -l --no-time";
