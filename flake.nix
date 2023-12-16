@@ -29,6 +29,7 @@
         system = "x86_64-linux";
         modules = [
           ./hosts/l380
+          nixos-hardware.nixosModules.lenovo-thinkpad-l13
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;

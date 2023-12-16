@@ -15,7 +15,12 @@
 
   boot = {
     kernelParams = [ "quiet" ];
-    initrd.systemd.enable = true;
+    initrd = {
+      systemd.enable = true;
+      availableKernelModules = [
+        "thinkpad_acpi"
+      ];
+    };
     plymouth.enable = true;
     loader = {
       systemd-boot.enable = true;
