@@ -42,9 +42,7 @@
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   environment.systemPackages = with pkgs; [ ];
-  environment.defaultPackages = with pkgs; [
-    usbutils
-  ];
+  environment.defaultPackages = with pkgs; [ ];
 
   xdg.portal = {
     config.common.default = "*";
@@ -74,6 +72,7 @@
   # Services
   services = {
     blueman.enable = true;
+    fwupd.enable = true;
     pipewire = {
       enable = true;
       alsa.enable = true;
