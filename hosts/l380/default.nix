@@ -47,6 +47,7 @@
   ];
 
   xdg.portal = {
+    config.common.default = "*";
     enable = true;
     wlr.enable = true;
   };
