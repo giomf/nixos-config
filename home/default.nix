@@ -49,6 +49,7 @@
     direnv
     duf
     hexyl
+    procs
 
     # Coding
     git
