@@ -118,6 +118,8 @@
         			}
 
         			monitor=,highres,auto,1
+        			monitor=DP-2,2560x1440@60,auto,1
+
         		'';
     };
 
