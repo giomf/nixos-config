@@ -4,22 +4,34 @@
   imports = [
     ../common.nix
     ./containers/pihole.nix
+    ./sanoid.nix
   ];
 
+  boot.zfs.extraPools = [ "zpool" ];
   system.stateVersion = "23.05";
-
   nix.settings.trusted-users = [ "@wheel" ];
-
   environment.systemPackages = with pkgs; [
     libraspberrypi
   ];
   environment.defaultPackages = with pkgs; [ ];
 
   # User
-  users.users.guif = {
-    openssh.authorizedKeys.keys = [
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIPI4hVcnH2C5Rq0Pkgv+rw2h1dAm2QQdyboDfW7kUlw guif@glap"
-    ];
+  users = {
+    users = {
+      "guif" = {
+        openssh.authorizedKeys.keys = [
+          "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIPI4hVcnH2C5Rq0Pkgv+rw2h1dAm2QQdyboDfW7kUlw guif@glap"
+        ];
+      };
+
+      "syncoid" = {
+        isSystemUser = true;
+        group = "syncoid";
+        createHome = true;
+        hashedPassword = "!";
+      };
+    };
+    groups.syncoid = {};
   };
 
   hardware = {
