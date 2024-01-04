@@ -9,9 +9,6 @@
   system.stateVersion = "23.05";
 
   nix.settings.trusted-users = [ "@wheel" ];
-  nix.settings.trusted-public-keys = [
-    "signing-key:TQo/2uoSvpCAcAtKM+ODaJtjKM2+/v2zH19cetQ3VLY="
-  ];
 
   environment.systemPackages = with pkgs; [
     libraspberrypi
