@@ -6,6 +6,7 @@
     ./joshuto.nix
     ./helix.nix
     ./starship.nix
+    ./zellij.nix
   ];
 
   # Home Manager needs a bit of information about you and the
@@ -36,7 +37,6 @@
     bat
     btop
     unzip
-    zellij
     wget
     docker-compose
     fzf
