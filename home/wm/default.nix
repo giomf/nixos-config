@@ -20,6 +20,7 @@
     libreoffice-qt
     keepassxc
     thunderbird
+    xournal
 
     # Social
     telegram-desktop
