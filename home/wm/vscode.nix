@@ -43,6 +43,7 @@
       # Workaround for: https://github.com/NixOS/nixpkgs/issues/246509
       "window.titleBarStyle" = "custom";
       "typst-lsp.experimentalFormatterMode" = "on";
+      "files.insertFinalNewline" = true;
     };
   };
 
