@@ -6,6 +6,7 @@
     nil
     nodePackages_latest.bash-language-server
     python311Packages.python-lsp-server
+    rust-analyzer
   ];
   
   programs.helix = {
@@ -17,6 +18,14 @@
         line-number = "relative";
         rulers = [120];
         mouse = false;
+        statusline = {
+          left = ["mode" "spinner" "version-control"];
+          center = ["file-name" "file-modification-indicator" "diagnostics"];
+          right = ["position" "total-line-numbers"];
+        };
+        lsp = {
+          display-messages = true;
+        };
       };
     };
   };

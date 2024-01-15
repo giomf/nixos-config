@@ -34,22 +34,22 @@
 		";
     shellAliases = {
       # ls = eza
-      "ls" = "eza -lbghF";
-      "ll" = "eza -lbghF";
       "la" = "eza -lbghFa";
+      "ll" = "eza -lbghF";
+      "ls" = "eza -lbghF";
       "lt" = "eza --tree --level=2";
 
       # cat = bat
       "cat" = "bat";
 
       # git
+      "gca" = "git commit -a";
       "gch" = "git checkout";
+      "gdi" = "git diff";
       "gph" = "git push";
       "gpl" = "git pull";
-      "gca" = "git commit -a";
       "gre" = "git rebase";
       "gst" = "git status";
-      "gdi" = "git diff";
     };
     functions = {
       cd = "builtin cd $argv && eza -l --no-time";
