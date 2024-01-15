@@ -3,7 +3,6 @@
 {
   imports = [
     ./fish.nix
-    ./joshuto.nix
     ./helix.nix
     ./starship.nix
     ./zellij.nix
@@ -50,6 +49,7 @@
     duf
     hexyl
     procs
+    ranger
 
     # Coding
     git

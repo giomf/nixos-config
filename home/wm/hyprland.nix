@@ -29,7 +29,7 @@
         			bind = $mod, return, exec, $term -e zellij attach -c TERMINAL
         			bind = $mod, space, exec, $menu
         			bind = $mod SHIFT, return, exec, firefox
-        			bind = $mod, F, exec, $term -e joshuto
+        			bind = $mod, F, exec, $term -e ranger
         			bind = $mod, K, exec, keepassxc
         			bind = $mod, M, exec, thunderbird
         			bind = $mod, T, exec, $term -e btop

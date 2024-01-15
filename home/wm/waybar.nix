@@ -92,6 +92,16 @@
         				color: #${text};
         			}
 
+              #tray menu * {
+                background-color: #${bar_base};
+                color: #${text};
+              }
+
+              #tray menu menuitem:hover {
+                background-color: #${bar_items};
+                color: #${text};
+              }
+
         			window#waybar {
         				background: #${bar_base};
         			}
