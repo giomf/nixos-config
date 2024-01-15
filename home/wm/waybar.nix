@@ -3,15 +3,15 @@
 {
   programs.waybar =
     let
-      colors = import ./colors.nix;
       bar_base = colors.grey_dark;
-      bar_items = colors.grey_light;
       bar_highlights = colors.blue;
+      bar_items = colors.grey_light;
+      colors = import ./colors.nix;
+      critical = colors.red;
+      focus = colors.purple;
       power_button = colors.red;
       text = colors.white;
-      focus = colors.purple;
       warning = colors.orange;
-      critical = colors.red;
     in
     {
       enable = true;

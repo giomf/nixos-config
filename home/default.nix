@@ -32,31 +32,31 @@
   # Packages
   home.packages = with pkgs; [
     # Base
-    eza
     bat
     btop
-    unzip
-    wget
+    direnv
     docker-compose
-    fzf
+    dogdns
     du-dust
+    duf
+    eza
     file
+    fzf
+    hexyl
     kmon
     numbat
-    ripgrep
-    dogdns
-    direnv
-    duf
-    hexyl
     procs
     ranger
+    ripgrep
+    unzip
+    wget
 
     # Coding
+    gh
     git
     git-crypt
     gnupg
     nixpkgs-review
-    gh
   ];
 
   # Services

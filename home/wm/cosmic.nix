@@ -2,14 +2,14 @@
 
 {
   home.packages = with pkgs; [
+    cosmic-applets
     cosmic-comp
+    cosmic-greeter
+    cosmic-icons
+    cosmic-launcher
     cosmic-osd
     cosmic-panel
-    cosmic-icons
-    cosmic-greeter
     cosmic-settings
-    cosmic-launcher
-    cosmic-applets
     cosmic-workspaces-epoch
   ];
 }

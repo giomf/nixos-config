@@ -13,10 +13,10 @@
         id = 0;
         name = "guif";
         extensions = with pkgs.nur.repos.rycee.firefox-addons; [
-          ublock-origin
           darkreader
-          keepassxc-browser
           floccus
+          keepassxc-browser
+          ublock-origin
         ];
       };
     };

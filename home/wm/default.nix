@@ -2,32 +2,32 @@
 
 {
   imports = [
+    ./alacritty.nix
+    ./browsers.nix
     ./hyprland.nix
     ./vscode.nix
-    ./browsers.nix
     ./waybar.nix
-    ./alacritty.nix
   ];
 
   # Packages
   home.packages = with pkgs; [
     # Base
+    networkmanagerapplet
     pavucontrol
     pulseaudio
-    networkmanagerapplet
 
     # Office
-    libreoffice-qt
     keepassxc
+    libreoffice-qt
     thunderbird
     xournal
 
     # Social
-    telegram-desktop
-    element-desktop
     discord
-    spotify
+    element-desktop
     nextcloud-client
+    spotify
+    telegram-desktop
   ];
 
   services.blueman-applet.enable = true;

@@ -2,9 +2,9 @@
 
 {
   home.packages = with pkgs; [
-    swaylock-effects
     bemenu
     gammastep
+    swaylock-effects
   ];
 
   wayland.windowManager.sway = {

@@ -4,9 +4,9 @@
   home.packages = with pkgs; [
     bemenu
     gammastep
-    swaylock-effects
-    sway-contrib.grimshot
     swaybg
+    sway-contrib.grimshot
+    swaylock-effects
   ];
 
   wayland.windowManager.hyprland =

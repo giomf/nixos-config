@@ -3,8 +3,8 @@
 {
   imports = [
     ../common.nix
-    ./hardware-configuration.nix
     ./greetd.nix
+    ./hardware-configuration.nix
   ];
 
   system.stateVersion = "23.05";
