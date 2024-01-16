@@ -20,8 +20,8 @@
         mouse = false;
         statusline = {
           left = ["mode" "spinner" "version-control"];
-          center = ["file-name" "file-modification-indicator" "diagnostics"];
-          right = ["position" "total-line-numbers"];
+          center = ["file-base-name" "file-modification-indicator" "diagnostics"];
+          right = ["selections" "position" "total-line-numbers"];
         };
         lsp = {
           display-messages = true;
