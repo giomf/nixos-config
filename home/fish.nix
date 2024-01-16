@@ -27,6 +27,9 @@
 			set -g __fish_git_prompt_char_upstream_prefix \" \"
 
 			set -g __fish_git_prompt_color_cleanstate green
+
+      # Force truecolor support for wsl
+      set -gx COLORTERM truecolor
 			
 			bind \\ef fzf-file-widget
 			bind \\ed fzf-cd-widget
