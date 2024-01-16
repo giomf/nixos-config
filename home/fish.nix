@@ -50,7 +50,7 @@
       "gch" = "git checkout";
       "gdi" = "git diff";
       "gph" = "git push";
-      "gpl" = "git pull";
+      "gpr" = "git pull --rebase";
       "gre" = "git rebase";
       "gst" = "git status";
     };
