@@ -3,6 +3,7 @@
 {
   imports = [
     ./fish.nix
+    ./git.nix
     ./helix.nix
     ./starship.nix
     ./zellij.nix
