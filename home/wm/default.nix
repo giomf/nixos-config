@@ -1,10 +1,11 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   imports = [
     ./alacritty.nix
     ./browsers.nix
     ./hyprland.nix
+#    ./keyring.nix
     ./vscode.nix
     ./waybar.nix
   ];
