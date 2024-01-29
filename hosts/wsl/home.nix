@@ -3,6 +3,7 @@
 {
   imports = [
     ../../home
+    ../../home/keyring.nix
   ];
 
   # Needed for vscode
