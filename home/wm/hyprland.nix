@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   home.packages = with pkgs; [
@@ -25,6 +25,10 @@
         			exec-once = nm-applet --indicator
         			exec-once = nextcloud
         			exec-once = swaybg --mode fill --image ${./wallpaper.png}
+              exec-once = [workspace 1] telegram-desktop
+              exec-once = [workspace 1] element-desktop
+              exec-once = [workspace 5] thunderbird 
+              exec-once = [workspace 9] keepassxc 
 
         			bind = $mod, return, exec, $term -e zellij attach -c TERMINAL
         			bind = $mod, space, exec, $menu
