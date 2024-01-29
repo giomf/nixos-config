@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
 
@@ -23,6 +23,7 @@
         line-number = "relative";
         rulers = [ 120 ];
         mouse = false;
+        color-modes = true;
         statusline = {
           left = [ "mode" "spinner" "version-control" ];
           center = [ "file-base-name" "file-modification-indicator" "diagnostics" ];
