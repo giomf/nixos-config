@@ -1,21 +1,15 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
-  imports = [
-    ../common.nix
-    ./greetd.nix
-    ./hardware-configuration.nix
-  ];
+  imports = [ ../common.nix ./greetd.nix ./hardware-configuration.nix ];
 
   system.stateVersion = "23.05";
-  
+
   boot = {
     kernelParams = [ "quiet" ];
     initrd = {
       systemd.enable = true;
-      availableKernelModules = [
-        "thinkpad_acpi"
-      ];
+      availableKernelModules = [ "thinkpad_acpi" ];
     };
     plymouth.enable = true;
     loader = {
@@ -78,13 +72,7 @@
   };
 
   # User
-  users.users.guif = {
-    extraGroups = [
-      "video"
-      "audio"
-      "networkmanager"
-    ];
-  };
+  users.users.guif = { extraGroups = [ "video" "audio" "networkmanager" ]; };
 
   # Networking
   networking = {
@@ -97,14 +85,14 @@
 
   # Hardware
   hardware = {
-    bluetooth.enable = true;
+    bluetooth = {
+      enable = true;
+      powerOnBoot = false;
+    };
     opengl = {
       enable = true;
       driSupport = true;
-      extraPackages = with pkgs; [
-        intel-compute-runtime
-        intel-media-driver
-      ];
+      extraPackages = with pkgs; [ intel-compute-runtime intel-media-driver ];
     };
   };
 }
