@@ -23,7 +23,7 @@
 
         			exec-once = light -N 10
         			exec-once = nm-applet --indicator
-        			exec-once = nextcloud
+        			exec-once = nextcloud --background
         			exec-once = swaybg --mode fill --image ${./wallpaper.png}
               exec-once = [workspace 1] telegram-desktop
               exec-once = [workspace 1] element-desktop
