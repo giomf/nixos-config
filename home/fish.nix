@@ -49,6 +49,7 @@
       "gca" = "git commit -a";
       "gch" = "git checkout";
       "gdi" = "git diff";
+      "glg" = "git log";
       "gph" = "git push";
       "gpr" = "git pull --rebase";
       "gre" = "git rebase";
