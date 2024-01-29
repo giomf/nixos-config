@@ -25,7 +25,7 @@
         mouse = false;
         color-modes = true;
         statusline = {
-          left = [ "mode" "spinner" "version-control" ];
+          left = [ "mode" "spacer" "spinner" "spacer" "version-control" ];
           center = [ "file-base-name" "file-modification-indicator" "diagnostics" ];
           right = [ "selections" "position" "total-line-numbers" ];
         };
