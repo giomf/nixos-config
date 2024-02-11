@@ -3,8 +3,6 @@
 {
   programs.zellij = {
     enable = true;
-    settings = {
-      session_serialization = false;
-    };
   };
+  xdg.configFile."zellij/config.kdl".source = ./zellij-config.kdl;
 }
