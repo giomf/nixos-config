@@ -70,6 +70,13 @@
           right = "no_op";
           up = "no_op";
         };
+        select = {
+          e = "move_next_word_end";
+          H = "goto_line_start";
+          L = "goto_line_end";
+          W = "move_prev_long_word_start";
+          w = "move_prev_word_start";
+        };
       };
     };
     languages = {
