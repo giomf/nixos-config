@@ -15,7 +15,12 @@
     rnix-lsp
     # for bash IDE
     shellcheck
+    # python
+    python311Packages.python-lsp-server
     python310Packages.yapf
+    # C++
+    clang-tools
+    lldb
   ];
 
   xdg.configFile."zellij/layouts/musmol.kdl".source = ./musmol.kdl;

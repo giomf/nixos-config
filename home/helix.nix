@@ -8,8 +8,6 @@
     nixfmt
     # bash
     nodePackages_latest.bash-language-server
-    # python
-    python311Packages.python-lsp-server
     # rust
     rust-analyzer
   ];
