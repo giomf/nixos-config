@@ -58,7 +58,10 @@
           W = "move_prev_long_word_start";
           w = "move_prev_word_start";
           X = "extend_line_above";
+          space.q = ":q";
+          space.w = ":w";
         };
+
         insert = {
           down = "no_op";
           end = "no_op";
