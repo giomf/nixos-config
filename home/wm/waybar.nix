@@ -23,7 +23,7 @@
           height = 30;
           modules-left = [ "custom/power" "hyprland/workspaces" ];
           modules-center = [ "tray" ];
-          modules-right = [ "network" "backlight" "pulseaudio" "temperature" "battery" "clock" ];
+          modules-right = [ "backlight" "pulseaudio" "temperature" "battery" "clock" ];
 
           "tray" = {
             icon-size = 20;
@@ -72,14 +72,14 @@
             format-icons = [ "" "" "" ];
           };
 
-          "network" = {
-            format-ethernet = "󰈀";
-            tooltip-format-ethernet = "󰈀\n󰩟 {ipaddr}\n󰕒 {bandwidthUpBytes}\n󰇚 {bandwidthDownBytes}";
+       #   "network" = {
+       #     format-ethernet = "󰈀";
+       #     tooltip-format-ethernet = "󰈀\n󰩟 {ipaddr}\n󰕒 {bandwidthUpBytes}\n󰇚 {bandwidthDownBytes}";
 
-            format-wifi = "{icon} {signalStrength}%";
-            tooltip-format-wifi = "{icon} {essid} ({signalStrength}%)\n󰩟 {ipaddr}\n󰕒 {bandwidthUpBytes}\n󰇚 {bandwidthDownBytes}";
-            format-icons = [ "󰤯" "󰤟" "󰤢" "󰤥" "󰤨" ];
-          };
+       #     format-wifi = "{icon} {signalStrength}%";
+       #     tooltip-format-wifi = "{icon} {essid} ({signalStrength}%)\n󰩟 {ipaddr}\n󰕒 {bandwidthUpBytes}\n󰇚 {bandwidthDownBytes}";
+       #     format-icons = [ "󰤯" "󰤟" "󰤢" "󰤥" "󰤨" ];
+       #   };
         };
       };
       style = ''
