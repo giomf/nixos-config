@@ -19,6 +19,7 @@
     python311Packages.python-lsp-server
     python310Packages.yapf
     # C++
+    cmake
     clang-tools
     lldb
   ];
