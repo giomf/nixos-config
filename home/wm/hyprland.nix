@@ -28,7 +28,7 @@
 #              exec-once = [workspace 1] telegram-desktop
 #              exec-once = [workspace 1] element-desktop
 #              exec-once = [workspace 5] thunderbird 
-#              exec-once = [workspace 9] keepassxc 
+              exec-once = [workspace 9] keepassxc 
 
         			bind = $mod, return, exec, $term -e zellij attach -c TERMINAL
         			bind = $mod, space, exec, $menu
