@@ -22,6 +22,7 @@
     libreoffice-qt
     thunderbird
     xournal
+    vlc
 
     # Social
     discord
