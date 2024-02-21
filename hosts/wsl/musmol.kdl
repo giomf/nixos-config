@@ -19,4 +19,8 @@ layout {
         name "DBT"
         cwd "~/repos/claas/dbt"
     }
+    pane {
+        name "GSF"
+        cwd "~/repos/claas/gsf"
+    }
 }
