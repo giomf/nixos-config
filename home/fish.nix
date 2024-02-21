@@ -37,10 +37,10 @@
 		";
     shellAliases = {
       # ls = eza
-      "la" = "eza -lbghFa";
+      "la" = "eza -lbgha -F";
       "ll" = "eza -lbghF";
       "ls" = "eza -lbghF";
-      "lt" = "eza --tree --level=2";
+      "lt" = "eza -lbghF --tree --level=2";
 
       # cat = bat
       "cat" = "bat";
