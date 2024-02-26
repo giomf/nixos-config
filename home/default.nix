@@ -47,7 +47,7 @@
     kmon
     numbat
     procs
-    ranger
+    yazi
     ripgrep
     unzip
     wget
