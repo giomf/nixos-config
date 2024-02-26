@@ -51,6 +51,7 @@
     ripgrep
     unzip
     wget
+    tldr
 
     # Coding
     gh
