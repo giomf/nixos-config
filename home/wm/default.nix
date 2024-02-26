@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./alacritty.nix
+    ./kitty.nix
     ./browsers.nix
     ./hyprland.nix
 #    ./keyring.nix

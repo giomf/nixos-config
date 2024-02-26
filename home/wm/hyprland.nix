@@ -18,7 +18,7 @@
       enable = true;
       extraConfig = ''
         			$mod = SUPER
-        			$term = alacritty
+        			$term = kitty
         			$menu = bemenu-run
 
         			exec-once = light -N 10
@@ -30,10 +30,10 @@
 #              exec-once = [workspace 5] thunderbird 
               exec-once = [workspace 9] keepassxc 
 
-        			bind = $mod, return, exec, $term -e zellij attach -c TERMINAL
+        			bind = $mod, return, exec, $term zellij attach -c TERMINAL
         			bind = $mod, space, exec, $menu
         			bind = $mod SHIFT, return, exec, firefox
-        			bind = $mod, F, exec, $term -e yazi
+        			bind = $mod, F, exec, $term yazi
         			bind = $mod, O, exec, keepassxc
         			bind = $mod, M, exec, thunderbird
         			bind = $mod, T, exec, $term -e btop
