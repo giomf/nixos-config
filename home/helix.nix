@@ -83,13 +83,20 @@
       };
     };
     languages = {
-      language = [{
-        name = "nix";
-        formatter = {
-          command = "nixfmt";
-          args = [ "-" "-w" "120" "-q" ];
-        };
-      }];
+      language = [
+        {
+          name = "nix";
+          formatter = {
+            command = "nixfmt";
+            args = [ "-" "-w" "120" "-q" ];
+          };
+        }
+        {
+          name = "rust";
+          formatter = { command = "rustfmt"; };
+          auto-format = true;
+        }
+      ];
     };
   };
 }
