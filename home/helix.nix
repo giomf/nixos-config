@@ -32,6 +32,7 @@
           center = [ "file-base-name" "file-modification-indicator" "diagnostics" ];
           right = [ "selections" "position" "total-line-numbers" ];
         };
+        whitespace.render = "all";
         lsp = { display-messages = true; };
       };
 
