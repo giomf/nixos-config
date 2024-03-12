@@ -97,6 +97,11 @@
           formatter = { command = "rustfmt"; };
           auto-format = true;
         }
+        {
+          name = "python";
+          formatter = { command = "yapf"; args = [ "--style={based_on_style: google, column_limit: 120, indent_width: 4}" ]; };
+          auto-format = true;
+        }
       ];
     };
   };
