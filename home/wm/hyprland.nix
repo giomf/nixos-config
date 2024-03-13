@@ -136,7 +136,7 @@
       timeouts = [
         { timeout = 300; command = "${lock_idle_cmd}"; }
         { timeout = 600; command = "${output_off_cmd}"; resumeCommand = "${output_on_cmd}"; }
-        { timeout = 900; command = "${suspend_cmd}"; }
+        { timeout = 900; command = "${suspend_cmd}"; resumeCommand = "${output_on_cmd}"; }
       ];
     };
 }

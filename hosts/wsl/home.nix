@@ -12,7 +12,6 @@
     nodejs
     # for nix IDE
     nixpkgs-fmt
-    rnix-lsp
     # for bash IDE
     shellcheck
     # python

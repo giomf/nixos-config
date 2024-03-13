@@ -6,7 +6,6 @@
   home.packages = with pkgs; [
     # for nix IDE
     nixpkgs-fmt
-    rnix-lsp
     # for bash IDE
     shellcheck
     typst-fmt
