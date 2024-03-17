@@ -22,6 +22,7 @@
         rulers = [ 120 ];
         mouse = false;
         color-modes = true;
+        bufferline = "always";
         cursor-shape = {
           normal = "block";
           insert = "bar";
@@ -29,7 +30,7 @@
         };
         statusline = {
           left = [ "mode" "spacer" "spinner" "spacer" "version-control" ];
-          center = [ "file-base-name" "file-modification-indicator" "diagnostics" ];
+          center = [ "file-modification-indicator" "diagnostics" ];
           right = [ "selections" "position" "total-line-numbers" ];
         };
         whitespace.render = "all";
