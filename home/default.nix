@@ -41,17 +41,18 @@
     du-dust
     duf
     eza
+    fd
     file
     fzf
     hexyl
     kmon
     numbat
     procs
-    yazi
     ripgrep
+    tldr
     unzip
     wget
-    tldr
+    yazi
 
     # Coding
     gh
