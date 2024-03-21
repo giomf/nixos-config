@@ -56,7 +56,6 @@
 
     # Coding
     gh
-    git
     git-crypt
     gnupg
     nixpkgs-review
