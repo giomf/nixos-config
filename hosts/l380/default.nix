@@ -43,6 +43,7 @@
   programs = {
     # Needed for backlight controll as non root
     light.enable = true;
+    virt-manager.enable = true;
     steam = {
       enable = true;
       remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
@@ -50,7 +51,10 @@
     };
   };
 
-  virtualisation.docker.enable = true;
+  virtualisation = {
+    docker.enable = true;
+    libvirtd.enable = true;
+  };
 
   # Security
   security = {
@@ -72,7 +76,7 @@
   };
 
   # User
-  users.users.guif = { extraGroups = [ "video" "audio" "networkmanager" ]; };
+  users.users.guif = { extraGroups = [ "video" "audio" "networkmanager" "libvirtd" ]; };
 
   # Networking
   networking = {
