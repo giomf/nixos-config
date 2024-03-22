@@ -38,16 +38,17 @@
         format = "[$symbol$branch(:$remote_branch)]($style)";
       };
       git_status = {
-        format = "\\[$ahead_behind$modified$untracked$deleted$stashed\\]";
-        up_to_date = "[](green)";
-        diverged = "[($ahead_count)($beind_count)](yellow)";
+        format = "\\[$ahead_behind$modified$untracked$deleted$stashed$staged\\]";
         ahead = "[($count)](green)";
         behind = "[($count)](red)";
-        untracked = "?($count)";
-        modified = "[⌁($count)](yellow)";
-        stashed = "[⚑($count)](blue)";
         deleted = "[✘($count)](red)";
+        diverged = "[($ahead_count)($beind_count)](yellow)";
+        modified = "[⌁($count)](yellow)";
         renamed = "[($count)](yellow)";
+        stashed = "[⚑($count)](blue)";
+        untracked = "?($count)";
+        up_to_date = "[](green)";
+        staged = "[+($count)](green)";
 
       };
       fill.symbol = " ";
