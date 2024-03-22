@@ -6,6 +6,7 @@
   programs.git = {
     enable = true;
     extraConfig = {
+      push.autoSetupRemote = true;
       diff = { colorMoved = "default"; };
       merge = { conflictstyle = "diff3"; };
       include = {
