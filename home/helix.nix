@@ -29,8 +29,8 @@
           select = "underline";
         };
         statusline = {
-          left = [ "mode" "spacer" "spinner" "spacer" "version-control" ];
-          center = [ "file-modification-indicator" "diagnostics" ];
+          left = [ "mode" "spacer" "spinner" "spacer" "file-name" ];
+          center = [ "diagnostics" ];
           right = [ "selections" "position" "total-line-numbers" ];
         };
         whitespace.render = "all";
