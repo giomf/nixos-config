@@ -51,7 +51,7 @@
       "gdf" = "git diff";
       "glg" = "git log";
       "gph" = "git push";
-      "gpr" = "git pull --rebase --recurse-submodules";
+      "gpr" = "git pull --rebase";
       "gre" = "git rebase";
       "gst" = "git status";
     };
