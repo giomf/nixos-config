@@ -38,7 +38,7 @@
         format = "[$symbol$branch(:$remote_branch)]($style)";
       };
       git_status = {
-        format = "\\[$ahead_behind$modified$untracked$deleted$stashed$staged\\]";
+        format = "\\[$ahead_behind$modified$untracked$deleted$stashed$staged$renamed\\]";
         ahead = "[($count)](green)";
         behind = "[($count)](red)";
         deleted = "[✘($count)](red)";
