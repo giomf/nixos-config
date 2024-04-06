@@ -19,6 +19,7 @@
       theme = "github_dark_dimmed";
       editor = {
         line-number = "relative";
+        popup-border = "all";
         rulers = [ 120 ];
         mouse = false;
         color-modes = true;
