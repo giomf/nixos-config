@@ -16,6 +16,9 @@
       (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" "FiraCode" ]; })
       noto-fonts
       noto-fonts-emoji
+
+      roboto # Used for tpyst cv
+      source-sans-pro # Used for typst cv
     ];
     fontconfig = {
       enable = true;
