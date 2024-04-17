@@ -18,11 +18,12 @@
     pulseaudio
 
     # Office
+    gimp
     keepassxc
     libreoffice-qt
     thunderbird
-    xournal
     vlc
+    xournal
 
     # Social
     discord
