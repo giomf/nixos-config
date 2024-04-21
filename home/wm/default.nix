@@ -6,7 +6,7 @@
     ./browsers.nix
     ./hyprland.nix
 #    ./keyring.nix
-    ./vscode.nix
+    # ./vscode.nix
     ./waybar.nix
   ];
 
