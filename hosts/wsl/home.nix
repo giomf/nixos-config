@@ -6,10 +6,8 @@
     ../../home/keyring.nix
   ];
 
-  # Needed for vscode
+  # Needed packages for work
   home.packages = with pkgs; [
-    # for vscode
-    nodejs
     # for nix IDE
     nixpkgs-fmt
     # for bash IDE
@@ -21,6 +19,8 @@
     cmake
     clang-tools
     lldb
+
+    sshfs
   ];
 
   xdg.configFile."zellij/layouts/musmol.kdl".source = ./musmol.kdl;
