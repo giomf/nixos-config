@@ -46,6 +46,7 @@
     fzf
     hexyl
     kmon
+    nh
     numbat
     procs
     ripgrep
