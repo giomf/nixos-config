@@ -30,9 +30,9 @@
           select = "underline";
         };
         statusline = {
-          left = [ "mode" "spacer" "spinner" "spacer" "file-name" ];
+          left = [ "mode" "spacer" "spinner" "spacer" "file-name" "read-only-indicator"];
           center = [ "diagnostics" ];
-          right = [ "selections" "position" "total-line-numbers" ];
+          right = [ "selections" "position" "position-percentage" "total-line-numbers" ];
         };
         whitespace.render = "all";
         lsp = { display-messages = true; };
