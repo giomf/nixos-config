@@ -63,8 +63,8 @@
           X = "extend_line_above";
           space.q = ":q";
           space.w = ":w";
-          C-l = "jump_view_right";
-          C-h = "jump_view_left";
+          C-h = "goto_previous_buffer";
+          C-l = "goto_next_buffer";
         };
 
         insert = {
