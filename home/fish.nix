@@ -54,6 +54,8 @@
       "gph" = "git push";
       "gpr" = "git pull --rebase";
       "gre" = "git rebase";
+      "grh" = "git reset --hard";
+      "grs" = "git reset --soft";
       "gst" = "git status";
       "gsu" = "git submodule update --init --recursive";
     };
