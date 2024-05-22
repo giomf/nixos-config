@@ -55,6 +55,7 @@
       "gpr" = "git pull --rebase";
       "gre" = "git rebase";
       "gst" = "git status";
+      "gsu" = "git submodule update --init --recursive";
     };
     functions = {
       cd = "builtin cd $argv && eza -l --no-time";
