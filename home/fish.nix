@@ -56,6 +56,7 @@
       "gre" = "git rebase";
       "grh" = "git reset --hard";
       "grs" = "git reset --soft";
+      "gsh" = "git show";
       "gst" = "git status";
       "gsu" = "git submodule update --init --recursive";
     };
