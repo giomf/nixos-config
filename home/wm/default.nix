@@ -24,6 +24,7 @@
     thunderbird
     vlc
     xournal
+    freecad
 
     # Social
     discord
