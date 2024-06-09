@@ -24,6 +24,9 @@
     thunderbird
     vlc
     xournal
+
+    # 3D Printing
+    cura
     freecad
 
     # Social
