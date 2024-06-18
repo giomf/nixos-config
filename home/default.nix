@@ -50,6 +50,7 @@
     numbat
     procs
     ripgrep
+    termscp
     tldr
     unzip
     wget
