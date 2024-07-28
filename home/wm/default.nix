@@ -26,7 +26,7 @@
     xournal
 
     # 3D Printing
-    cura
+#    cura deactivate due to some build errors 
     freecad
 
     # Social
