@@ -5,7 +5,7 @@
   home.packages = with pkgs; [
     # nix
     nil
-    nixfmt
+    nixfmt-classic
     # bash
     nodePackages_latest.bash-language-server
     # rust
