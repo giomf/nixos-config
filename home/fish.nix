@@ -36,14 +36,14 @@
 			bind \\er fzf-history-widget
 		";
     shellAliases = {
+      # cat = bat
+      "cat" = "bat";
+
       # ls = eza
       "la" = "eza -lbgha -F";
       "ll" = "eza -lbghF";
       "ls" = "eza -lbghF";
       "lt" = "eza -lbghF --tree --level=2";
-
-      # cat = bat
-      "cat" = "bat";
 
       # git
       "gca" = "git commit -a";
@@ -60,6 +60,9 @@
       "gst" = "git status";
       "gsu" = "git submodule update --init --recursive";
       "gbp" = "git fetch -p ; git branch -r | awk '{print $1}' | egrep -v -f /dev/fd/0 (git branch -vv | grep origin | psub) | awk '{print $1}' | xargs git branch -D";
+
+      # cd = zoxide
+      "cd" = "z";
     };
     functions = {
       cd = "builtin cd $argv && eza -l --no-time";
