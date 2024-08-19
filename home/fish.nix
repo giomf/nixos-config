@@ -46,6 +46,7 @@
       "lt" = "eza -lbghF --tree --level=2";
 
       # git
+      "gaa" = "git add -A";
       "gca" = "git commit -a";
       "gch" = "git checkout";
       "gdf" = "git diff";
