@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  imports = [ ../common.nix ./greetd.nix ./hardware-configuration.nix ];
+  imports = [ ../common.nix ./cosmic.nix ./greetd.nix ./hardware-configuration.nix ];
 
   system.stateVersion = "23.05";
 

@@ -21,15 +21,27 @@
 
     # NixOs hardware quirks
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+
+    nixos-cosmic = {
+      url = "github:lilyinstarlight/nixos-cosmic";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, nur, nixos-wsl, nixos-hardware, ... }: {
+  outputs = inputs@{ self, nixpkgs, home-manager, nur, nixos-wsl, nixos-hardware, nixos-cosmic, ... }: {
     nixosConfigurations = {
       "glap" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           ./hosts/l380
           nixos-hardware.nixosModules.lenovo-thinkpad-l13
+          {
+            nix.settings = {
+                substituters = [ "https://cosmic.cachix.org/" ];
+                trusted-public-keys = [ "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE=" ];
+              };
+          }
+          nixos-cosmic.nixosModules.default
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
