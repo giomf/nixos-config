@@ -3,7 +3,7 @@
 {
   imports = [
     ../../home
-    ../../home/keyring.nix
+    # ../../home/keyring.nix
   ];
 
    home.packages = with pkgs; [
