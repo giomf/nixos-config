@@ -27,4 +27,6 @@
   virtualisation.docker = {
     enable = true;
   };
+
+  networking.hostName = "wsl";
 }
