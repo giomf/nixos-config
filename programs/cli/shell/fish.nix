@@ -72,6 +72,8 @@
 
           # journalctl
           "jc" = "journalctl";
+
+          "y" = "yazi";
         };
         functions = {
           cd = "builtin cd $argv && eza -l --no-time";
