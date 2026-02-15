@@ -7,9 +7,10 @@
     { pkgs, ... }:
     {
       imports = with inputs.self.modules.nixos; [
+        system-default
+
         cosmic
         steam
-        system-default
         templates
       ];
 
@@ -81,12 +82,13 @@
 
   flake.modules.homeManager.system-laptop = {
     imports = with inputs.self.modules.homeManager; [
+      system-default
+
       browsers
       cad
       cosmic
       office
       social
-      system-default
       terminal
     ];
   };

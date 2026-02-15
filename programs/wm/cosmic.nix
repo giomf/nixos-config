@@ -47,6 +47,12 @@
         inputs.cosmic-manager.homeManagerModules.cosmic-manager
       ];
 
+      # home-manager = {
+      #   extraSpecialArgs = {
+      #     cosmic-manager = inputs.cosmic-manager;
+      #   };
+      # };
+
       wayland.desktopManager.cosmic = with cosmicLib.cosmic; {
 
         enable = true;
