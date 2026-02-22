@@ -7,13 +7,16 @@
       services.desktopManager.cosmic.enable = true;
       services.displayManager.cosmic-greeter.enable = true;
       services.gnome.gnome-keyring.enable = false;
+      services.desktopManager.cosmic.showExcludedPkgsWarning = false;
       # Allow wayland support in all chrome and most electron apps
       environment.sessionVariables.NIXOS_OZONE_WL = "1";
       environment.cosmic.excludePackages = with pkgs; [
+        cosmic-edit
+        cosmic-initial-setup
         cosmic-player
+        cosmic-reader
         cosmic-term
         cosmic-wallpapers
-        cosmic-edit
       ];
     };
 
