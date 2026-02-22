@@ -2,6 +2,10 @@
 {
   flake.modules.homeManager.shell = {
     programs = {
+      intelli-shell = {
+        enable = true;
+        enableFishIntegration = true;
+      };
       fzf.enable = true;
       fish = {
         enable = true;
