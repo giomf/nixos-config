@@ -88,6 +88,7 @@
         thunderbird
         vlc
         xournalpp
+        wifi-qr
       ];
     };
 }
