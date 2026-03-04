@@ -42,6 +42,15 @@
           guif = {
             id = 0;
             name = "guif";
+            isDefault = true;
+            settings = {
+              "browser.ai.control.default" = "blocked";
+              "browser.ai.control.linkPreviewKeyPoints" = "blocked";
+              "browser.ai.control.pdfjsAltText" = "blocked";
+              "browser.ai.control.sidebarChatbot" = "blocked";
+              "browser.ai.control.smartTabGroups" = "blocked";
+              "browser.ai.control.translations" = "blocked";
+            };
             extensions.packages = with pkgs.nur.repos.rycee.firefox-addons; [
               darkreader
               floccus
