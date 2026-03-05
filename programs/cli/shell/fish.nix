@@ -76,8 +76,6 @@
 
           # journalctl
           "jc" = "journalctl";
-
-          "y" = "yazi";
         };
         functions = {
           cd = "builtin cd $argv && eza -l --no-time";
@@ -92,6 +90,15 @@
             else
               printf '[%s@%s%s%s]%s %s%s%s\n> ' $USER (set_color red) (prompt_hostname) (set_color normal) (fish_git_prompt) (set_color green) (prompt_pwd) (set_color normal)
             end
+          '';
+
+          y = ''
+            	set tmp (mktemp -t "yazi-cwd.XXXXXX")
+            	command yazi $argv --cwd-file="$tmp"
+            	if read -z cwd < "$tmp"; and [ "$cwd" != "$PWD" ]; and test -d "$cwd"
+            		builtin cd -- "$cwd"
+            	end
+            	rm -f -- "$tmp"
           '';
 
           # sudo wrapper that allows fish aliases
