@@ -25,6 +25,11 @@
           merge = {
             conflictstyle = "diff3";
           };
+          url = {
+            "git@github.com:" = {
+              insteadOf = "https://github.com/";
+            };
+          };
           include = {
             path = (
               builtins.fetchurl {
