@@ -21,8 +21,6 @@
       };
 
       programs = {
-        # Needed for backlight controll as non root
-        light.enable = true;
         virt-manager.enable = true;
         wireshark = {
           enable = true;
