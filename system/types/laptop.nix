@@ -4,7 +4,7 @@
 }:
 {
   flake.modules.nixos.system-laptop =
-    { pkgs, ... }:
+    { pkgs, lib, ... }:
     {
       imports = with inputs.self.modules.nixos; [
         system-default
@@ -73,7 +73,7 @@
       hardware = {
         bluetooth = {
           enable = true;
-          powerOnBoot = false;
+          powerOnBoot = lib.mkDefault false;
         };
       };
     };
