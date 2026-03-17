@@ -38,7 +38,9 @@
         yazi
 
         # Coding
-        aider-chat
+        (pkgs.github-copilot-cli.overrideAttrs (oldAttrs: {
+          postInstall = "";
+        }))
         gh
         git-crypt
         gnupg
