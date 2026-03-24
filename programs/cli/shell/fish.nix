@@ -73,6 +73,7 @@
 
           # systemctl
           "sc" = "systemctl";
+          "scu" = "systemctl --user";
 
           # journalctl
           "jc" = "journalctl";
