@@ -26,7 +26,8 @@
               "wheel"
             ]
             ++ lib.optional config.services.openssh.enable "ssh"
-            ++ lib.optional config.virtualisation.docker.enable "docker";
+            ++ lib.optional config.virtualisation.docker.enable "docker"
+            ++ lib.optional config.programs.wireshark.enable "wireshark";
             group = "guif";
             initialHashedPassword = "$y$j9T$hHZ1NIxqNvPno5mkSDSjI1$PojSMDbnHYHcrrdaTw74w6tSlLIRvMCbCbaCiDpMx3.";
             isNormalUser = true;

@@ -24,6 +24,7 @@
         virt-manager.enable = true;
         wireshark = {
           enable = true;
+          dumpcap.enable = true;
           package = pkgs.wireshark;
         };
       };
