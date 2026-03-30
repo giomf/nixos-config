@@ -12,6 +12,7 @@
         fonts
         home-manager
         local
+        ssh
       ];
     };
 

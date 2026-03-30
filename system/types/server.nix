@@ -10,7 +10,6 @@
         system-default
 
         fail2ban
-        ssh
         zfs
       ];
 
