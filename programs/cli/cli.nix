@@ -38,9 +38,7 @@
         yazi
 
         # Coding
-        (pkgs.github-copilot-cli.overrideAttrs (oldAttrs: {
-          postInstall = "";
-        }))
+        github-copilot-cli
         gh
         git-crypt
         gnupg
