@@ -10,8 +10,6 @@
         nixfmt
         # bash
         nodePackages_latest.bash-language-server
-        # rust
-        rust-analyzer
       ];
 
       programs.helix = {
