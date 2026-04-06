@@ -6,11 +6,8 @@
     { pkgs, ... }:
     {
       home.packages = with pkgs; [
-        # deactivate due to some build errors
-        # cura
-
+        cura-appimage
         freecad
-
         kicad
         temurin-jre-bin # Needed for kicads plugin freerouting
       ];
