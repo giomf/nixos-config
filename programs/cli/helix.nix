@@ -8,8 +8,6 @@
         # nix
         nil
         nixfmt
-        # bash
-        nodePackages_latest.bash-language-server
       ];
 
       programs.helix = {
