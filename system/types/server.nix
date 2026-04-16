@@ -12,11 +12,12 @@
         fail2ban
         zfs
       ];
-
       security = {
         sudo.wheelNeedsPassword = false;
       };
-
+      services = {
+        fwupd.enable = true;
+      };
     };
 
   flake.modules.homeManager.system-server = {
