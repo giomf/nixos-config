@@ -14,6 +14,7 @@
         local
         ssh
       ];
+      environment.systemPackages = with pkgs; [ usbutils ];
     };
 
   flake.modules.homeManager.system-default = {
