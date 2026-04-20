@@ -86,7 +86,7 @@
           theme.dark = {
             accent = mkRON "optional" {
               red = 1.0;
-              green = 0.6784314;
+              green = 0.678431;
               blue = 0.0;
             };
             corner_radii = {

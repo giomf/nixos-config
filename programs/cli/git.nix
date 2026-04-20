@@ -12,9 +12,9 @@
           line-numbers = true;
         };
       };
-
       git = {
         enable = true;
+        signing.format = null;
         settings = {
           core.excludesfile = "~/.global_gitignore";
           push.autoSetupRemote = true;
