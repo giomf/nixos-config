@@ -56,6 +56,7 @@
               floccus
               keepassxc-browser
               ublock-origin
+              vimium
             ];
           };
         };
