@@ -10,7 +10,6 @@
         system-default
 
         fail2ban
-        zfs
       ];
       security = {
         sudo.wheelNeedsPassword = false;
