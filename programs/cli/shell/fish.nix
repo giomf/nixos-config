@@ -80,8 +80,6 @@
         };
         functions = {
           cd = "builtin cd $argv && eza -l --no-time";
-          nixi = "nix shell nixpkgs#$argv --command fish";
-          nixs = "nix search nixpkgs $argv";
           fish_greeting = "";
           fish_right_prompt = "date '+%H:%M:%S'";
           in_nix = "if set -q IN_NIX_SHELL; printf '[%s%s%s]' ; end";
