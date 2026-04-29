@@ -2,7 +2,7 @@
 
 {
   flake.modules.homeManager.browsers =
-    { pkgs, ... }:
+    { pkgs, config, ... }:
     {
 
       home.packages = with pkgs; [
@@ -38,6 +38,7 @@
 
       programs.firefox = {
         enable = true;
+        configPath = "${config.xdg.configHome}/mozilla/firefox";
         profiles = {
           guif = {
             id = 0;
