@@ -77,6 +77,7 @@
 
           # journalctl
           "jc" = "journalctl";
+          "jcu" = "journalctl --user";
         };
         functions = {
           cd = "builtin cd $argv && eza -l --no-time";
