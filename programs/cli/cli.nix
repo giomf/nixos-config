@@ -45,7 +45,6 @@
         pwgen
         ripgrep
         sd
-        termscp
         tldr
         unzip
         wget
