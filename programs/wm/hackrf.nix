@@ -2,10 +2,11 @@
   ...
 }:
 {
-  flake.modules.nixos.hackrf = {
+  flake.modules.nixos.sdr = {
     hardware.hackrf.enable = true;
+    hardware.rtl-sdr.enable = true;
   };
-  flake.modules.homeManager.hackrf =
+  flake.modules.homeManager.sdr =
     { pkgs, ... }:
     {
       home.packages = with pkgs; [
@@ -13,6 +14,7 @@
         gqrx
         gnuradio
         sdrpp
+        rtl-sdr
       ];
     };
 }
