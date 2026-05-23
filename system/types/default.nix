@@ -3,32 +3,33 @@
   ...
 }:
 {
-  flake.modules.nixos.system-default =
+  flake.modules.nixos.system-default = {
+    imports = with inputs.self.modules.nixos; [
+      system-minimal
+
+      fonts
+      home-manager
+      local
+      ssh
+    ];
+  };
+
+  flake.modules.homeManager.system-default =
     { pkgs, ... }:
     {
-      imports = with inputs.self.modules.nixos; [
+      imports = with inputs.self.modules.homeManager; [
         system-minimal
 
-        fonts
-        home-manager
-        local
+        cli
+        git
+        helix
+        shell
         ssh
       ];
-      environment.systemPackages = with pkgs; [
+
+      home.packages = with pkgs; [
         usbutils
         pciutils
       ];
     };
-
-  flake.modules.homeManager.system-default = {
-    imports = with inputs.self.modules.homeManager; [
-      system-minimal
-
-      cli
-      git
-      helix
-      shell
-      ssh
-    ];
-  };
 }
