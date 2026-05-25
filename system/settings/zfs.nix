@@ -7,7 +7,7 @@
       cfg = config.mine.zfs;
     in
     {
-      imports = with inputs.self.modules.nixos; [ sanoid ];
+      imports = with inputs.self.modules.nixos; [ sanoid smartd ];
 
       options.mine.zfs.pools = lib.mkOption {
         type = lib.types.listOf lib.types.str;
