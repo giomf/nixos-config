@@ -9,10 +9,10 @@
         enable = true;
         interval = "hourly";
         datasets.tank = {
-          hourly = 1;
+          hourly = 72;
           daily = 30;
-          monthly = 12;
-          yearly = 3;
+          weekly = 4;
+          monthly = 6;
           autosnap = true;
           autoprune = true;
           recursive = true;
