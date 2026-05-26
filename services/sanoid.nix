@@ -8,7 +8,7 @@
       cfg = config.mine.zfs;
       datasetConfig = {
         hourly = 72;
-        daily = 30;
+        daily = 14;
         weekly = 4;
         monthly = 6;
         autosnap = cfg.sanoid.autosnap;
