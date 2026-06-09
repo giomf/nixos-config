@@ -9,6 +9,7 @@
         cura-appimage
         freecad
         kicad
+        easyeda2kicad
         temurin-jre-bin # Needed for kicads plugin freerouting
       ];
     };
