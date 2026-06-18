@@ -21,7 +21,7 @@
             ]);
         }))
         easyeda2kicad
-        temurin-jre-bin # Needed for kicads plugin freerouting
+        temurin-jre-bin-25 # Needed for kicads plugin freerouting
       ];
     };
 }
