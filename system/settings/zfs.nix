@@ -7,7 +7,10 @@
       cfg = config.mine.zfs;
     in
     {
-      imports = with inputs.self.modules.nixos; [ sanoid smartd ];
+      imports = with inputs.self.modules.nixos; [
+        sanoid
+        smartd
+      ];
 
       options.mine.zfs.pools = lib.mkOption {
         type = lib.types.listOf lib.types.str;
@@ -17,6 +20,7 @@
 
       config = lib.mkIf (cfg.pools != [ ]) {
         boot.supportedFilesystems = [ "zfs" ];
+        boot.zfs.forceImportRoot = false;
         boot.zfs.extraPools = cfg.pools;
         services.zfs.autoScrub.enable = true;
         services.zfs.autoScrub.interval = "monthly";
