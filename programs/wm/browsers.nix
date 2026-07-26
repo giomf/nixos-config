@@ -45,6 +45,11 @@
             name = "guif";
             isDefault = true;
             settings = {
+              # Blank page for new tabs and new windows
+              "browser.newtabpage.enabled" = false;
+              "browser.startup.homepage" = "about:blank";
+              "browser.startup.page" = 1;
+
               "browser.ai.control.default" = "blocked";
               "browser.ai.control.linkPreviewKeyPoints" = "blocked";
               "browser.ai.control.pdfjsAltText" = "blocked";
