@@ -46,10 +46,10 @@
           "cat" = "bat";
 
           # ls = eza
-          "la" = "eza -lbgha -F";
-          "ll" = "eza -lbghF";
-          "ls" = "eza -lbghF";
-          "lt" = "eza -lbghF --tree --level=2";
+          "la" = "eza -lbgha --classify=always";
+          "ll" = "eza -lbgh --classify=always";
+          "ls" = "eza -lbgh --classify=always";
+          "lt" = "eza -lbgh --classify=always --tree --level=2";
 
           # git
           "lg" = "lazygit";
