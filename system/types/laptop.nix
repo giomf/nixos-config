@@ -42,6 +42,8 @@
       };
 
       services = {
+        # Needed for https://github.com/github/copilot-cli/issues/3392
+        envfs.enable = true;
         printing = {
           enable = true;
           drivers = [
