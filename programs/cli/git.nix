@@ -18,6 +18,9 @@
         settings = {
           core.excludesfile = "~/.global_gitignore";
           push.autoSetupRemote = true;
+          blame = {
+            ignoreRevsFile = ".git-blame-ignore-revs";
+          };
           diff = {
             colorMoved = "default";
           };
