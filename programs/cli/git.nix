@@ -46,10 +46,10 @@
       lazygit = {
         enable = true;
         settings = {
-          git.pagers = [
+          git.diffRenderers = [
             {
               colorArgs = "always";
-              pager = "delta --dark --paging=never --features mantis-shrimp-lite";
+              command = "delta --dark --paging=never --features mantis-shrimp-lite";
             }
           ];
         };
