@@ -51,6 +51,7 @@
         yazi
 
         # Coding
+        claude-code
         github-copilot-cli
         gh
         git-crypt
