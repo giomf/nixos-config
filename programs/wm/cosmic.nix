@@ -50,12 +50,6 @@
         inputs.cosmic-manager.homeManagerModules.cosmic-manager
       ];
 
-      # home-manager = {
-      #   extraSpecialArgs = {
-      #     cosmic-manager = inputs.cosmic-manager;
-      #   };
-      # };
-
       wayland.desktopManager.cosmic = with cosmicLib.cosmic; {
 
         enable = true;
@@ -63,7 +57,7 @@
         compositor = {
           autotile = true;
           active_hint = true;
-          focus_follows_cursor = true;
+          focus_follows_cursor = false;
           worksoace_mode = mkRON "enum" "Global";
           xkb_config = {
             layout = "de";
