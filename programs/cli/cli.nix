@@ -38,6 +38,7 @@
         file
         hexyl
         kmon
+        mdcat
         nmap
         numbat
         openssl
