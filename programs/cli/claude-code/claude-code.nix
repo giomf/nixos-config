@@ -13,6 +13,13 @@
 
   flake.modules.homeManager.claude-code =
     { pkgs, lib, ... }:
+    let
+      statusline = pkgs.writeShellApplication {
+        name = "claude-statusline";
+        runtimeInputs = [ pkgs.jq ];
+        text = builtins.readFile ./statusline.sh;
+      };
+    in
     {
       programs.claude-code = {
         enable = true;
@@ -26,8 +33,17 @@
           '';
           inherit (pkgs.claude-code) meta;
         };
+        # Read-only settings.json: change theme, plugins etc. here, not via /config or /plugin.
+        settings = {
+          theme = "dark";
+          statusLine = {
+            type = "command";
+            command = lib.getExe statusline;
+          };
+        };
         skills = {
           grilling = "${inputs.mattpocock-skills}/skills/productivity/grilling";
+          embedded-cpp-review = ./skills/embedded-cpp-review;
         };
       };
 
