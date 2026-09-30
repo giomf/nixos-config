@@ -1,6 +1,17 @@
 { inputs, ... }:
 {
-  flake.modules.homeManager.cli =
+  flake-file.inputs = {
+    mattpocock-skills = {
+      url = "github:mattpocock/skills";
+      flake = false;
+    };
+    ponytail = {
+      url = "github:DietrichGebert/ponytail";
+      flake = false;
+    };
+  };
+
+  flake.modules.homeManager.claude-code =
     { pkgs, lib, ... }:
     {
       programs.claude-code = {

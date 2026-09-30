@@ -87,6 +87,7 @@
 
       browsers
       cad
+      claude-code
       cosmic
       office
       social
