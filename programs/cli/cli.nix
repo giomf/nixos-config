@@ -53,7 +53,6 @@
         yazi
 
         # Coding
-        github-copilot-cli
         gh
         git-crypt
         gnupg
