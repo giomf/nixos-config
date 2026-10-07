@@ -22,6 +22,7 @@ Flag every violation in the diff, and never propose one in a fix:
 
 Before recommending anything:
 
+- **Agent instructions (mandatory):** read the repo's agent entry point: `AGENTS.md`, `CLAUDE.md`, or whatever file the project or user named as the jump-in point, plus any files it links to. Its rules override the defaults in this guide. If none exists, say so in the review.
 - **Standard:** look in `CMakeLists.txt` / build files for `CMAKE_CXX_STANDARD` or `-std=`. Assume C++23 if nothing is found; don't suggest newer features than the project uses.
 - **ETL:** if `etl/` (Embedded Template Library) is on the include path or in the dependencies, prefer it for fixed-capacity containers (`etl::vector<T, N>`, `etl::string<N>`, `etl::map`) and non-owning callbacks (`etl::delegate`). Otherwise use the standard-only sketches in `references/patterns.md`. Never add ETL as a dependency without asking.
 - **Existing conventions:** reuse the project's HAL wrappers, error enums and container types before introducing new ones.
