@@ -53,7 +53,8 @@ Design, principles and the heap/exception/RTTI constraints come from SKILL.md. T
 
 ## Readability
 
-- Names consistent with the codebase; early returns over deep nesting.
+- Names follow the project's documented naming conventions (e.g. a `conventions.md` linked from `AGENTS.md`); only if none exist, stay consistent with the surrounding code. Flag violations in new or moved code, even if the old code broke them too.
+- Early returns over deep nesting.
 - Comments explain *why* (datasheet section, errata, timing requirement); no stale or commented-out code.
 - Magic numbers and register bits named.
 
