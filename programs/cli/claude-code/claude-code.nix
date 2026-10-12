@@ -41,6 +41,14 @@
             command = lib.getExe statusline;
           };
         };
+        # codegraph comes from the project dev shell (patched there), not installed globally
+        mcpServers.codegraph = {
+          command = "codegraph";
+          args = [
+            "serve"
+            "--mcp"
+          ];
+        };
         skills = {
           grilling = "${inputs.mattpocock-skills}/skills/productivity/grilling";
           embedded-cpp-review = ./skills/embedded-cpp-review;
