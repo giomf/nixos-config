@@ -96,7 +96,9 @@ Load `references/review.md` and follow it. Output a findings list, most severe f
 [tag] file:line: problem → suggested fix (one line why)
 ```
 
-`constraint` = breaks section 1 (heap, exceptions, RTTI). `design` = a principle from section 3 or a mismatch with section 4. `cost` = an abstraction whose price in section 5 isn't justified. `review.md` adds `bug`, `concurrency`, `resource` and `style`. Close with the one or two changes that matter most.
+`constraint` = breaks section 1 (heap, exceptions, RTTI). `design` = a principle from section 3 or a mismatch with section 4. `cost` = an abstraction whose price in section 5 isn't justified. `review.md` adds `bug`, `concurrency`, `resource`, `style` and `question`. Close with the one or two changes that matter most.
+
+Never post to GitHub unless the user passes `--comment`; then always as a **pending** review, never submitted (see "Posting to GitHub" in `references/review.md`).
 
 ## 7. References
 

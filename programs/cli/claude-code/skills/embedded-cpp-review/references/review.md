@@ -44,6 +44,21 @@ Design, principles and the heap/exception/RTTI constraints come from SKILL.md. T
 - Explicit state machines over flag combinations; defined behaviour on reset and brownout.
 - Tests included and covering error and timeout paths.
 
+## Modern C++ idioms (C++ only)
+
+Hunt C-style code in C++ files; the types in SKILL.md section 1 are allowed, so use them. Don't report how much the codebase already uses them; the user knows the codebase.
+
+- Output parameters and `bool` + `T&` / `bool* ok = nullptr` → return `std::optional<T>`. A defaulted `ok` pointer lets callers ignore failure, which makes it a `bug` risk, not just `style`.
+- `bool` + a reason only in the log (enum result, several failure paths) → `std::expected<T, E>`. Not when the error path must also return data (e.g. bytes consumed by a decoder): return a small struct there.
+- Pointer + length pairs → `std::span`. Copying into a fixed buffer without checking the length against its capacity is a `bug`.
+- C arrays → `std::array`, especially where it replaces element-wise compare/copy loops with `==` / `=`.
+- `valid` / `has_x` flags and sentinel values (`unit == 0`) next to the data → `std::optional` members (usually the same size after padding).
+- Parallel arrays, or pointer arrays to sibling members → `std::array` of a struct.
+- Hand-rolled stdlib: parity/bit loops → `std::popcount` / `<bit>`; `memcpy` type punning → `std::bit_cast`; `sizeof(a)/sizeof(a[0])` → `std::size`; copy/shift loops → `std::copy` / `memmove`.
+- Mutable globals swapped temporarily to change a callee's behaviour → pass the values as parameters.
+
+Ask for the fixes to API signatures in this PR; leave internal idiom fixes as follow-ups.
+
 ## C idioms (C only)
 
 - `static` for file-local symbols, `const` on pointer params, include guards / `#pragma once`.
@@ -65,8 +80,16 @@ Verify each finding against the code before reporting; drop anything you can't p
 - `bug`: correctness, UB, unchecked errors, unbounded waits.
 - `concurrency`: ISR, RTOS, shared-state and peripheral races.
 - `resource`: stack, flash/RAM, power, watchdog, persistent data.
-- `style`: C idioms and readability.
+- `style`: C idioms, modern C++ idioms and readability.
+- `question`: open questions about intent or hardware.
 
-Order: `constraint` and `bug` first, then `concurrency`, `design`, `resource`, `cost`, `style`. Add open questions about intent or hardware separately. End with a 2–3 sentence verdict on design quality and merge readiness.
+Order: `constraint` and `bug` first, then `concurrency`, `design`, `resource`, `cost`, `style`, `question`. List questions separately in the terminal report. End with a 2–3 sentence verdict on design quality and merge readiness.
 
-If the user passes `--comment` and the target is a GitHub PR, post findings as inline review comments via `gh api` only after showing them the list and getting confirmation.
+## Posting to GitHub
+
+- Post only when the user passes `--comment` and the target is a GitHub PR. Never post otherwise.
+- Always create a **pending** review: `POST /repos/{owner}/{repo}/pulls/{n}/reviews` with `commit_id` and `comments`, and **no `event` field**. Never submit, approve or request changes; the user finishes the review.
+- Post every finding, including the ones without a single line (anchor those on line 1 of the file). To add a comment to an existing pending review, use the GraphQL `addPullRequestReviewThread` mutation with the review's `node_id`.
+- Start each comment body with its tag: `[bug] …`, `[style] …`, `[design] …`, `[question] …`.
+- Keep comments short and follow the repo's rules for PR text (e.g. `AGENTS.md`), but never post a bare fix. Each comment states, in one or two sentences, what is wrong or could be better, why it matters, and the fix. The reader must understand it without opening the code. Not `` `std::size(CHANNEL_CS)` `` but `` [style] `sizeof(CHANNEL_CS) / sizeof(CHANNEL_CS[0])` silently breaks if the array ever becomes a pointer; `std::size(CHANNEL_CS)` says the same and won't compile then. ``
+- Afterwards, list the review's comments via the API and check the count matches the findings.
