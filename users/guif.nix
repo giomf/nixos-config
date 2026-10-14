@@ -1,15 +1,4 @@
 {
-  inputs,
-  ...
-}:
-{
-
-  flake.homeConfigurations = {
-    guif = inputs.home-manager.lib.homeManagerConfiguration {
-      pkgs = inputs.nixpkgs.legacyPackages."x86_64-linux";
-    };
-  };
-
   flake.modules.nixos.guif =
     {
       pkgs,
