@@ -90,7 +90,7 @@ If the case is weak, report it as `cost` with the plain alternative. Likewise, d
 
 ## 6. How to review
 
-Load `references/review.md` and follow it. Output a findings list, most severe first:
+Load `references/review.md` and follow it. Start the review with a summary of what the changes do, in no more than 10 sentences. Then output a findings list, most severe first:
 
 ```
 [tag] file:line: problem → suggested fix (one line why)
