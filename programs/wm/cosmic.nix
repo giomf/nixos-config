@@ -4,8 +4,8 @@
   flake-file.inputs.cosmic-manager = {
     url = "github:HeitorAugustoLN/cosmic-manager";
     inputs = {
-      nixpkgs.follows = "nixpkgs";
-      home-manager.follows = "home-manager";
+      nixpkgs.follows = "nixpkgs-unstable";
+      home-manager.follows = "home-manager-unstable";
     };
   };
 
