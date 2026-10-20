@@ -83,7 +83,6 @@
         feh
         gimp
         keepassxc
-        obsidian
         onlyoffice-desktopeditors
         thunderbird
         vlc
