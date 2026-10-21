@@ -89,6 +89,7 @@
       cad
       claude-code
       cosmic
+      mitos
       office
       social
       terminal
