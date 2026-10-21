@@ -1,0 +1,99 @@
+theme = "github_dark_dimmed"
+
+[editor]
+jump-label-alphabet = "asdfghjklqwertzuio"
+line-number = "relative"
+rulers = [120]
+
+[editor.cursor.shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.indent-guides]
+character = "┊"
+render = true
+skip-levels = 1
+
+[editor.diagnostics.inline]
+cursor-line = "warning"
+other-lines = "disable"
+
+[editor.diagnostics.end-of-line]
+severity = "hint"
+
+[editor.bufferline]
+show = "always"
+
+[editor.lsp]
+
+[editor.lsp.messages]
+enable = true
+
+[editor.statusline]
+left = ["mode", "spacer", "spinner", "spacer", "file-name", "read-only-indicator"]
+right = ["diagnostics", "selections", "position", "position-percentage", "total-line-numbers"]
+
+[editor.statusline.mode]
+color = true
+
+[editor.whitespace]
+render = "all"
+
+[editor.mouse]
+enable = false
+
+[editor.cursor]
+highlight-line = true
+
+[keys.insert]
+down = "no_op"
+end = "no_op"
+home = "no_op"
+left = "no_op"
+pagedown = "no_op"
+pageup = "no_op"
+right = "no_op"
+up = "no_op"
+
+[keys.insert.j]
+k = "normal_mode"
+
+[keys.normal]
+C-S-j = ["extend_to_line_bounds", "delete_selection", "move_line_down", "paste_before"]
+C-S-k = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
+C-h = "goto_previous_buffer"
+C-j = ["extend_to_line_bounds", "yank", "move_line_down", "paste_before"]
+C-k = ["extend_to_line_bounds", "yank", "move_line_up", "paste_after"]
+C-l = "goto_next_buffer"
+D = "delete_char_backward"
+H = "goto_line_start"
+J = ["move_visual_line_down", "move_visual_line_down", "move_visual_line_down"]
+K = ["move_visual_line_up", "move_visual_line_up", "move_visual_line_up"]
+L = "goto_line_end"
+X = "extend_line_above"
+ret = "goto_word"
+
+[keys.normal.space]
+g = [
+  ":write-all",
+  ":new",
+  ":insert-output zellij run -fc --blocking --width 90%% --height 90%% -x 5%% -y 5%% -- lazygit",
+  ":buffer-close!",
+  ":reload-all",
+]
+q = ":q"
+w = ":w"
+
+[keys.select]
+H = "goto_line_start"
+L = "goto_line_end"
+W = "move_prev_long_word_start"
+e = "move_next_word_end"
+w = "move_prev_word_start"
+
+[editor.breadcrumb]
+enable = true
+
+[editor.spelling]
+languages = ["en_US", "de_DE"]
