@@ -13,6 +13,8 @@
         description = "agenix secret holding a complete wg-quick config.";
       };
 
+      options.mine.wireguard.autostart = lib.mkEnableOption "bringing wg0 up at boot, retrying until it connects";
+
       config = lib.mkIf (cfg.secretFile != null) {
         age.secrets.wireguard.file = cfg.secretFile;
 
@@ -20,17 +22,15 @@
         networking.networkmanager.unmanaged = [ "interface:wg0" ];
 
         networking.wg-quick.interfaces.wg0 = {
-          autostart = lib.mkDefault false;
+          inherit (cfg) autostart;
           configFile = config.age.secrets.wireguard.path;
         };
 
         # Endpoint may not resolve yet at boot, retry instead of staying down
-        systemd.services.wg-quick-wg0.serviceConfig =
-          lib.mkIf config.networking.wg-quick.interfaces.wg0.autostart
-            {
-              Restart = "on-failure";
-              RestartSec = 10;
-            };
+        systemd.services.wg-quick-wg0.serviceConfig = lib.mkIf cfg.autostart {
+          Restart = "on-failure";
+          RestartSec = 10;
+        };
       };
     };
 
