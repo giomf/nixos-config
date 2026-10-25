@@ -75,13 +75,6 @@ X = "extend_line_above"
 ret = "goto_word"
 
 [keys.normal.space]
-g = [
-  ":write-all",
-  ":new",
-  ":insert-output zellij run -fc --blocking --width 90%% --height 90%% -x 5%% -y 5%% -- lazygit",
-  ":buffer-close!",
-  ":reload-all",
-]
 q = ":q"
 w = ":w"
 
