@@ -91,6 +91,7 @@
       cosmic
       mitos
       office
+      qlcplus
       social
       terminal
     ];
