@@ -1,6 +1,6 @@
 ---
 name: embedded-cpp-review
-description: Review embedded C and C++ firmware pull requests, branches, commits or diffs for correctness, ISR/RTOS safety, resource use and software design (heap-free C++23 in the spirit of Klaus Iglberger's "C++ Software Design": SOLID, YAGNI, value semantics, concepts, std::variant, Type Erasure). Use when the user asks to review a firmware PR or C/C++ changes, or says "cpp review", "c review", "embedded cpp review", "firmware review", or invokes /embedded-cpp-review.
+description: Review embedded C and C++ firmware pull requests, branches, commits or diffs for correctness, ISR/RTOS safety, resource use and software design (heap-free C++23 in the spirit of Klaus Iglberger's "C++ Software Design": SOLID, YAGNI, value semantics, concepts, std::variant, Type Erasure). Use when the user asks to review a firmware PR or C/C++ changes, or says "embedded cpp review", "firmware review", "c review", or invokes /embedded-cpp-review. For C++ on a normal Linux machine use cpp-review instead.
 ---
 
 # Embedded C/C++ PR Review
