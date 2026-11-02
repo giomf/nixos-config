@@ -36,6 +36,11 @@
         # Read-only settings.json: change theme, plugins etc. here, not via /config or /plugin.
         settings = {
           theme = "dark";
+          # No Co-Authored-By / "Generated with Claude Code" lines
+          attribution = {
+            commit = "";
+            pr = "";
+          };
           statusLine = {
             type = "command";
             command = lib.getExe statusline;
@@ -52,6 +57,7 @@
         skills = {
           grilling = "${inputs.mattpocock-skills}/skills/productivity/grilling";
           embedded-cpp-review = ./skills/embedded-cpp-review;
+          git = ./skills/git;
         };
       };
 
