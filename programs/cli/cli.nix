@@ -50,6 +50,7 @@
         sd
         tldr
         unzip
+        wavemon
         wget
         yazi
 
