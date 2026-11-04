@@ -39,6 +39,7 @@
         file
         hexyl
         kmon
+        mcat
         mdcat
         nmap
         numbat
