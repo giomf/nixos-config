@@ -26,6 +26,9 @@
           configFile = config.age.secrets.wireguard.path;
         };
 
+        # wg-quick copies configFile into its PrivateTmp; keep tmpfiles from aging it out, or stop can't find it
+        systemd.tmpfiles.rules = [ "x /tmp/systemd-private-%b-wg-quick-wg0.service-*/tmp/wg0.conf" ];
+
         # Endpoint may not resolve yet at boot, retry instead of staying down
         systemd.services.wg-quick-wg0.serviceConfig = lib.mkIf cfg.autostart {
           Restart = "on-failure";
