@@ -5,10 +5,6 @@
       url = "github:mattpocock/skills";
       flake = false;
     };
-    ponytail = {
-      url = "github:DietrichGebert/ponytail";
-      flake = false;
-    };
   };
 
   flake.modules.homeManager.claude-code =
@@ -37,7 +33,17 @@
         settings = {
           theme = "dark";
           # lobaro marketplace itself comes from the org's managed settings
-          enabledPlugins."lobaro-firmware@lobaro" = true;
+          enabledPlugins = {
+            "lobaro-firmware@lobaro" = true;
+            # Marketplace install, not programs.claude-code.plugins: that links per
+            # file and Claude Code rejects hooks resolving outside the plugin dir.
+            # https://github.com/nix-community/home-manager/issues/9906
+            "ponytail@ponytail" = true;
+          };
+          extraKnownMarketplaces.ponytail.source = {
+            source = "github";
+            repo = "DietrichGebert/ponytail";
+          };
           # No Co-Authored-By / "Generated with Claude Code" lines
           attribution = {
             commit = "";
@@ -62,11 +68,5 @@
           cpp-review = ./skills/cpp-review;
         };
       };
-
-      # Single symlink to the plugin source. Both `programs.claude-code.plugins` and
-      # `.skills` link per entry/file, and Claude Code rejects hooks that resolve
-      # outside the plugin dir.
-      # https://github.com/nix-community/home-manager/issues/9906
-      home.file.".claude/skills/ponytail".source = inputs.ponytail;
     };
 }
