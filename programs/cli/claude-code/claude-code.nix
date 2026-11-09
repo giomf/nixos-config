@@ -36,6 +36,8 @@
         # Read-only settings.json: change theme, plugins etc. here, not via /config or /plugin.
         settings = {
           theme = "dark";
+          # lobaro marketplace itself comes from the org's managed settings
+          enabledPlugins."lobaro-firmware@lobaro" = true;
           # No Co-Authored-By / "Generated with Claude Code" lines
           attribution = {
             commit = "";
