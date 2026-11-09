@@ -74,6 +74,7 @@ X = "extend_line_above"
 ret = "goto_word"
 
 [keys.normal.space]
+g = ":lazygit"
 q = ":q"
 w = ":w"
 
@@ -92,3 +93,7 @@ languages = ["en_US", "de_DE"]
 
 [editor.rulers]
 columns = [120]
+
+# keymap sequences cancel pending interactive expansions; custom commands await them
+[commands]
+":lazygit" = [":write-all", ":echo %sh_interactive{lazygit}", ":reload-all"]
