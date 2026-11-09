@@ -3,7 +3,6 @@ theme = "github_dark_dimmed"
 [editor]
 jump-label-alphabet = "asdfghjklqwertzuio"
 line-number = "relative"
-rulers = [120]
 
 [editor.cursor.shape]
 insert = "bar"
@@ -81,12 +80,15 @@ w = ":w"
 [keys.select]
 H = "goto_line_start"
 L = "goto_line_end"
-W = "move_prev_long_word_start"
+W = "move_previous_long_word_start"
 e = "move_next_word_end"
-w = "move_prev_word_start"
+w = "move_previous_word_start"
 
 [editor.breadcrumb]
 enable = true
 
 [editor.spelling]
 languages = ["en_US", "de_DE"]
+
+[editor.rulers]
+columns = [120]
