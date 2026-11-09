@@ -56,7 +56,6 @@
         };
         skills = {
           grilling = "${inputs.mattpocock-skills}/skills/productivity/grilling";
-          embedded-cpp-review = ./skills/embedded-cpp-review;
           git = ./skills/git;
           cpp-review = ./skills/cpp-review;
         };

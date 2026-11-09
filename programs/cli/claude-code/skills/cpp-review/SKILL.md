@@ -1,6 +1,6 @@
 ---
 name: cpp-review
-description: Review C++ pull requests, branches, commits or diffs for Linux userspace applications, services and libraries, covering correctness, ownership and lifetime, exception safety, concurrency, syscall/POSIX use, security and software design (modern C++23 in the spirit of Klaus Iglberger's "C++ Software Design": SOLID, YAGNI, value semantics, concepts, std::variant, Type Erasure). Use when the user asks to review a C++ PR or C++ changes for a normal Linux machine, or says "cpp review", "c++ review", "review this C++", or invokes /cpp-review. For microcontroller firmware use embedded-cpp-review instead.
+description: Review C++ pull requests, branches, commits or diffs for Linux userspace applications, services and libraries, covering correctness, ownership and lifetime, exception safety, concurrency, syscall/POSIX use, security and software design (modern C++23 in the spirit of Klaus Iglberger's "C++ Software Design": SOLID, YAGNI, value semantics, concepts, std::variant, Type Erasure). Use when the user asks to review a C++ PR or C++ changes for a normal Linux machine, or says "cpp review", "c++ review", "review this C++", or invokes /cpp-review.
 ---
 
 # C++ PR Review (Linux userspace)
