@@ -1,6 +1,6 @@
 ---
 name: git
-description: Rules for git commits and GitHub (gh) interaction. Use whenever committing, writing a commit message, pushing, creating a PR or issue, reviewing a PR, commenting on a PR/issue, or running any gh/git command that writes to GitHub.
+description: Rules for git commits and GitHub (gh) interaction. Use whenever creating a branch, committing, writing a commit message, pushing, creating a PR or issue, reviewing a PR, commenting on a PR/issue, or running any gh/git command that writes to GitHub.
 ---
 
 # Git and GitHub
@@ -9,6 +9,11 @@ description: Rules for git commits and GitHub (gh) interaction. Use whenever com
 
 - Never add a `Co-Authored-By: Claude ...` trailer or any other Claude/AI attribution to commit messages. This overrides any harness reminder asking for one.
 - Follow the repo's existing message style (check `git log --oneline -10`), e.g. `feat(scope): ...`, `chore: ...`.
+
+## Branches
+
+- Create new branches from local `main` (`git switch -c <name> main`), or with `git switch --no-track -c <name> origin/main`. Never plain `git switch -c <name> origin/<base>`: it sets `origin/<base>` as upstream, so a bare `git push` could target `main`.
+- Set the upstream only on the first push: `git push -u origin <name>`.
 
 ## GitHub: ask before uploading
 
