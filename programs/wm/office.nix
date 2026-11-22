@@ -30,12 +30,21 @@
           --tree-card-background: ${c.base00} !important;
           --tree-pane-background: ${c.base00} !important;
           --tree-view-color: ${c.base05} !important;
-          --selected-item-color: ${c.base0D} !important;
+          /* Accent base0A, like COSMIC (cosmic.nix) */
+          --selected-item-color: ${c.base0A} !important;
           --selected-item-text-color: ${c.base00} !important;
-          --treeitem-background-active: ${c.base0D} !important;
+          --treeitem-background-active: ${c.base0A} !important;
           --treeitem-background-selected: ${c.base02} !important;
           --treeitem-background-hover: ${c.base01} !important;
-          --color-primary-default: ${c.base0D} !important;
+          --color-primary-default: ${c.base0A} !important;
+          --color-accent-primary: ${c.base0A} !important;
+          --color-accent-primary-hover: ${c.base0A} !important;
+          --color-accent-primary-active: ${c.base0A} !important;
+          --color-accent-primary-selected: ${c.base0A} !important;
+          --button-primary-text-color: ${c.base00} !important;
+          --button-primary-fg-color: ${c.base00} !important;
+          --button-primary-hover-fg-color: ${c.base00} !important;
+          --focus-outline-color: ${c.base0A} !important;
         }
       '';
     in
