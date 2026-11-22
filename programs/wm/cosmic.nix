@@ -151,7 +151,7 @@
           {
             action = mkRON "enum" {
               value = [
-                "alacritty -e zellij attach -c TERMINAL"
+                "rio -e zellij attach -c TERMINAL"
               ];
               variant = "Spawn";
             };
@@ -161,7 +161,7 @@
           {
             action = mkRON "enum" {
               value = [
-                "kitty yazi"
+                "rio -e yazi"
               ];
               variant = "Spawn";
             };
@@ -198,7 +198,7 @@
         systemActions = mkRON "map" [
           {
             key = mkRON "enum" "Terminal";
-            value = "alacritty";
+            value = "rio";
           }
           {
             key = mkRON "enum" "Launcher";
