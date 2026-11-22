@@ -24,18 +24,6 @@
           enable = true;
           nix-direnv.enable = true;
         };
-        yazi = {
-          enable = true;
-          # fish.nix defines its own `y` wrapper
-          enableFishIntegration = false;
-          keymap.mgr.prepend_keymap = [
-            {
-              on = "!";
-              run = ''shell "$SHELL" --block'';
-              desc = "Open shell here";
-            }
-          ];
-        };
       };
 
       home.packages = with pkgs; [
