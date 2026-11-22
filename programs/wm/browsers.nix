@@ -57,6 +57,8 @@
               "browser.ai.control.smartTabGroups" = "blocked";
               "browser.ai.control.translations" = "blocked";
             };
+            # Needed because stylix writes Firefox Color's settings on laptops
+            extensions.force = true;
             extensions.packages = with pkgs.nur.repos.rycee.firefox-addons; [
               darkreader
               floccus

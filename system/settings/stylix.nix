@@ -16,11 +16,20 @@
         # Opt in per app instead of theming everything at once
         autoEnable = false;
         polarity = "dark";
-        base16Scheme = "${pkgs.base16-schemes}/share/themes/github-dark.yaml";
+        base16Scheme = "${pkgs.base16-schemes}/share/themes/precious-dark-eleven.yaml";
         fonts = {
           monospace = {
             package = pkgs.cascadia-code;
             name = "Cascadia Code NF";
+          };
+          # Same as fontconfig defaults; otherwise stylix falls back to DejaVu (e.g. in Firefox)
+          sansSerif = {
+            package = pkgs.noto-fonts;
+            name = "Noto Sans";
+          };
+          serif = {
+            package = pkgs.noto-fonts;
+            name = "Noto Serif";
           };
           # Points; rio gets pt * 4/3 px, so this is rio's old size 15
           sizes.terminal = 11.25;
@@ -35,6 +44,12 @@
           stylix.targets = {
             bat.enable = true;
             btop.enable = true;
+            # Browser UI via the Firefox Color extension; pages stay with Dark Reader
+            firefox = {
+              enable = true;
+              profileNames = [ "guif" ];
+              colorTheme.enable = true;
+            };
             rio.enable = true;
             helix.enable = true;
             yazi.enable = true;
