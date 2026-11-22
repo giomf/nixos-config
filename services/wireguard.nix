@@ -2,7 +2,7 @@
 
 {
   flake.modules.nixos.wireguard-client =
-    { lib, config, ... }:
+    { lib, config, pkgs, ... }:
     let
       cfg = config.mine.wireguard;
     in
@@ -33,6 +33,20 @@
         systemd.services.wg-quick-wg0.serviceConfig = lib.mkIf cfg.autostart {
           Restart = "on-failure";
           RestartSec = 10;
+        };
+
+        # Router reconnects leave a stale NAT entry that keepalives never let expire; a new source port gets a fresh one
+        systemd.services.wg0-watchdog = lib.mkIf cfg.autostart {
+          startAt = "*:0/2";
+          requisite = [ "wg-quick-wg0.service" ];
+          path = [ pkgs.wireguard-tools ];
+          script = ''
+            ts=$(wg show wg0 latest-handshakes | cut -f2)
+            if [ $(( $(date +%s) - ''${ts:-0} )) -gt 300 ]; then
+              echo "handshake stale, moving to a new source port"
+              wg set wg0 listen-port 0
+            fi
+          '';
         };
       };
     };
