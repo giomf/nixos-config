@@ -39,7 +39,6 @@
               colorTheme.enable = true;
             };
             rio.enable = true;
-            helix.enable = true;
             yazi.enable = true;
           };
         }

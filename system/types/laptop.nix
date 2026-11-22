@@ -90,7 +90,6 @@
       cad
       claude-code
       cosmic
-      mitos
       office
       qlcplus
       social

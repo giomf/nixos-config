@@ -22,7 +22,7 @@
 
         cli
         git
-        helix
+        mitos
         shell
         ssh
       ];

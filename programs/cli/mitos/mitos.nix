@@ -8,13 +8,52 @@
   };
 
   flake.modules.homeManager.mitos =
-    { pkgs, config, ... }:
+    { pkgs, ... }:
+    let
+      # Formatters per language, written to mitos/languages.toml
+      languages = {
+        language = [
+          {
+            name = "nix";
+            auto-format = true;
+            formatter = {
+              command = "nixfmt";
+              # args = [ "-" "-w" "120" "-q" ];
+            };
+          }
+          {
+            name = "python";
+            formatter = {
+              command = "bash";
+              args = [
+                "-c"
+                "ruff check --select I --fix - | ruff format -"
+              ];
+            };
+            auto-format = true;
+          }
+          {
+            name = "cpp";
+            formatter = {
+              command = "clang-format";
+            };
+            auto-format = true;
+          }
+        ];
+      };
+    in
     {
+      home.sessionVariables.EDITOR = "ms";
+
       home.packages =
         let
           mitosPkgs = import inputs.mitos-pr { inherit (pkgs.stdenv.hostPlatform) system; };
         in
+        with pkgs;
         [
+          # nix language server and formatter
+          nil
+          nixfmt
           # PR packaging, bumped to 0.1.3
           (mitosPkgs.mitos.override {
             mitos-unwrapped = mitosPkgs.mitos-unwrapped.overrideAttrs (old: rec {
@@ -30,10 +69,9 @@
           })
         ];
 
-      # Helix fork: own config.toml (format diverges), languages.toml still shared with helix
       xdg.configFile = {
         "mitos/config.toml".source = ./config.toml;
-        "mitos/languages.toml".source = config.xdg.configFile."helix/languages.toml".source;
+        "mitos/languages.toml".source = (pkgs.formats.toml { }).generate "languages.toml" languages;
         # mitos ignores the .aff SET line and only reads UTF-8; de_DE ships ISO8859-1
         "mitos/runtime/dictionaries/de_DE".source =
           pkgs.runCommand "hunspell-de_DE-utf8" { nativeBuildInputs = [ pkgs.iconv ]; }
