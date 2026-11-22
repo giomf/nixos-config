@@ -8,6 +8,7 @@
       programs.rio = {
         enable = true;
         settings = {
+          confirm-before-quit = false;
           # Stylix maps this to base02, too dark for fish autosuggestions; use the comment grey (base03) instead
           colors.light-black = lib.mkForce config.lib.stylix.colors.withHashtag.base03;
           cursor = {
