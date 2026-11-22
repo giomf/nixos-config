@@ -26,6 +26,9 @@
           configFile = config.age.secrets.wireguard.path;
         };
 
+        # shortcut: workarounds for https://github.com/NixOS/nixpkgs/issues/584414, remove both once it's fixed
+        # A failed stop (e.g. conf gone from PrivateTmp) leaves wg0 behind and every start then fails with "already exists"
+        systemd.services.wg-quick-wg0.preStart = "${pkgs.iproute2}/bin/ip link delete wg0 2>/dev/null || true";
         # wg-quick copies configFile into its PrivateTmp; keep tmpfiles from aging it out, or stop can't find it
         systemd.tmpfiles.rules = [ "x /tmp/systemd-private-%b-wg-quick-wg0.service-*/tmp/wg0.conf" ];
 
