@@ -148,6 +148,19 @@
             apply_theme_global = true;
             show_maximize = false;
             show_minimize = false;
+            # Same fonts as fontconfig in font.nix (COSMIC defaults to Inter / JetBrains Mono)
+            interface_font = {
+              family = "Fira Sans";
+              stretch = mkRON "enum" "Normal";
+              style = mkRON "enum" "Normal";
+              weight = mkRON "enum" "Normal";
+            };
+            monospace_font = {
+              family = "FiraCode Nerd Font Mono";
+              stretch = mkRON "enum" "Normal";
+              style = mkRON "enum" "Normal";
+              weight = mkRON "enum" "Normal";
+            };
           };
         };
 

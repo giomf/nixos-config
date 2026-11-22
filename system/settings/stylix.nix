@@ -18,26 +18,12 @@
         polarity = "dark";
         base16Scheme = "${pkgs.base16-schemes}/share/themes/precious-dark-eleven.yaml";
         fonts = {
-          monospace = {
-            package = pkgs.cascadia-code;
-            name = "Cascadia Code NF";
-          };
-          # Same as fontconfig defaults; otherwise stylix falls back to DejaVu (e.g. in Firefox)
-          sansSerif = {
-            package = pkgs.noto-fonts;
-            name = "Noto Sans";
-          };
-          serif = {
-            package = pkgs.noto-fonts;
-            name = "Noto Serif";
-          };
+          # rio ignores fontconfig, so it needs the name here; installed and set as system default in font.nix
+          monospace.name = "FiraCode Nerd Font Mono";
           # Points; rio gets pt * 4/3 px, so this is rio's old size 15
           sizes.terminal = 11.25;
         };
       };
-
-      # autoEnable = false skips the fontconfig target, so install the font ourselves (rio reads it via additional-dirs)
-      fonts.packages = [ pkgs.cascadia-code ];
 
       home-manager.sharedModules = [
         {
@@ -48,6 +34,8 @@
             firefox = {
               enable = true;
               profileNames = [ "guif" ];
+              # Keep Firefox on the fontconfig defaults from font.nix
+              fonts.enable = false;
               colorTheme.enable = true;
             };
             rio.enable = true;

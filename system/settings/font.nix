@@ -8,9 +8,10 @@
       fonts = {
         fontDir.enable = true;
         packages = with pkgs; [
-          font-awesome
+          # One family everywhere: Fira Code for monospace, Fira Sans for text
+          fira-sans
           nerd-fonts.fira-code
-          nerd-fonts.symbols-only
+          # Fallback only, for scripts and symbols Fira lacks
           noto-fonts
           noto-fonts-color-emoji
 
@@ -21,9 +22,10 @@
           enable = true;
           defaultFonts = {
             emoji = [ "Noto Color Emoji" ];
-            monospace = [ "Noto Sans Mono" ];
-            sansSerif = [ "Noto Sans" ];
-            serif = [ "Noto Serif" ];
+            monospace = [ "FiraCode Nerd Font Mono" ];
+            sansSerif = [ "Fira Sans" ];
+            # Fira has no serif font
+            serif = [ "Fira Sans" ];
           };
         };
       };
