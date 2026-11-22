@@ -11,6 +11,7 @@
 
         cosmic
         steam
+        stylix
         templates
       ];
 

@@ -2,7 +2,7 @@
 
 {
   flake.modules.homeManager.helix =
-    { pkgs, ... }:
+    { pkgs, lib, ... }:
     {
       home.packages = with pkgs; [
         # nix
@@ -14,7 +14,8 @@
         enable = true;
         defaultEditor = true;
         settings = {
-          theme = "github_dark_dimmed";
+          # stylix overrides this where enabled (laptops)
+          theme = lib.mkDefault "github_dark_dimmed";
           editor = {
             line-number = "relative";
             popup-border = "all";

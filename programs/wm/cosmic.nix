@@ -30,12 +30,21 @@
 
   flake.modules.homeManager.cosmic =
     {
+      config,
       pkgs,
       cosmic-manager,
       cosmicLib,
       ...
     }:
     let
+      # Stylix base16 color as a COSMIC srgb value
+      c = config.lib.stylix.colors;
+      rgb = base: {
+        red = builtins.fromJSON c."${base}-dec-r";
+        green = builtins.fromJSON c."${base}-dec-g";
+        blue = builtins.fromJSON c."${base}-dec-b";
+      };
+      rgba = base: rgb base // { alpha = 1.0; };
       screenshot_script = pkgs.writeShellApplication {
         runtimeInputs = with pkgs; [
           satty
@@ -86,11 +95,16 @@
         appearance = {
           theme.mode = "dark";
           theme.dark = {
-            accent = mkRON "optional" {
-              red = 1.0;
-              green = 0.678431;
-              blue = 0.0;
-            };
+            # Colors follow the stylix scheme (base16 roles)
+            accent = mkRON "optional" (rgb "base0A");
+            bg_color = mkRON "optional" (rgba "base00");
+            primary_container_bg = mkRON "optional" (rgba "base01");
+            secondary_container_bg = mkRON "optional" (rgba "base02");
+            neutral_tint = mkRON "optional" (rgb "base03");
+            text_tint = mkRON "optional" (rgb "base05");
+            destructive = mkRON "optional" (rgb "base08");
+            warning = mkRON "optional" (rgb "base09");
+            success = mkRON "optional" (rgb "base0B");
             corner_radii = {
               radius_0 = mkRON "tuple" [
                 0.0

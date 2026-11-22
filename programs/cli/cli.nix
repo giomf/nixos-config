@@ -14,6 +14,9 @@
       ];
 
       programs = {
+        # Via programs.* so stylix can theme them on laptops
+        bat.enable = true;
+        btop.enable = true;
         zoxide.enable = true;
         # This will still use the nix-index-database
         nix-index.enable = true;
@@ -28,8 +31,6 @@
 
       home.packages = with pkgs; [
         # Base
-        bat
-        btop
         docker-compose
         doggo
         dua
