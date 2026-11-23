@@ -56,6 +56,11 @@
               "browser.ai.control.sidebarChatbot" = "blocked";
               "browser.ai.control.smartTabGroups" = "blocked";
               "browser.ai.control.translations" = "blocked";
+
+              # home-manager turns this off for Firefox Color's settings, which hides every other extension's data
+              "extensions.webextensions.ExtensionStorageIDB.enabled" = true;
+              # Re-import stylix's Firefox Color theme after each rebuild
+              "extensions.webextensions.ExtensionStorageIDB.migrated.FirefoxColor@mozilla.com" = false;
             };
             # Needed because stylix writes Firefox Color's settings on laptops
             extensions.force = true;
