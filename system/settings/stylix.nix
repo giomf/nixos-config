@@ -26,22 +26,31 @@
       };
 
       home-manager.sharedModules = [
-        {
-          stylix.targets = {
-            bat.enable = true;
-            btop.enable = true;
-            # Browser UI via the Firefox Color extension; pages stay with Dark Reader
-            firefox = {
-              enable = true;
-              profileNames = [ "guif" ];
-              # Keep Firefox on the fontconfig defaults from font.nix
-              fonts.enable = false;
-              colorTheme.enable = true;
+        (
+          { config, ... }:
+          {
+            stylix.targets = {
+              bat.enable = true;
+              btop.enable = true;
+              # Browser UI via the Firefox Color extension; pages stay with Dark Reader
+              firefox = {
+                enable = true;
+                profileNames = [ "guif" ];
+                # Keep Firefox on the fontconfig defaults from font.nix
+                fonts.enable = false;
+                colorTheme.enable = true;
+                # Accent base0A like COSMIC and Thunderbird instead of blue base0D
+                colors.override = with config.lib.stylix.colors; {
+                  base0D-rgb-r = base0A-rgb-r;
+                  base0D-rgb-g = base0A-rgb-g;
+                  base0D-rgb-b = base0A-rgb-b;
+                };
+              };
+              rio.enable = true;
+              yazi.enable = true;
             };
-            rio.enable = true;
-            yazi.enable = true;
-          };
-        }
+          }
+        )
       ];
     };
 }
