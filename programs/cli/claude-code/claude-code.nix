@@ -66,6 +66,7 @@
           grilling = "${inputs.mattpocock-skills}/skills/productivity/grilling";
           git = ./skills/git;
           cpp-review = ./skills/cpp-review;
+          ssh = ./skills/ssh;
         };
       };
     };
